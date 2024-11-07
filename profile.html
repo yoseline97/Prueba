@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Usuario - SABI</title>
+    <link rel="stylesheet" href="stylesPF.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h2>Perfil del Usuario</h2>
+        <p><strong>Nombre:</strong> <span id="userName">No disponible</span></p>
+        <input type="text" id="newUserName" placeholder="Nuevo nombre">
+        
+        <p><strong>Contraseña:</strong> <span id="userPassword">No disponible</span></p>
+        <input type="password" id="newUserPassword" placeholder="Nueva contraseña">
+        
+        <button class="save-button" onclick="saveChanges()">Guardar Cambios</button>
+        <button class="logout-button" onclick="logout()">Cerrar Sesión</button>
+    </div>
+
+    <script>
+        // Cargar datos de sessionStorage en el perfil
+        const userName = sessionStorage.getItem("userName");
+        const userPassword = sessionStorage.getItem("userPassword");
+
+        if (userName && userPassword) {
+            document.getElementById("userName").textContent = userName;
+            document.getElementById("userPassword").textContent = userPassword;
+        } else {
+            console.log("No se encontraron datos en sessionStorage.");
+        }
+
+        // Función para guardar cambios en Firebase y en sessionStorage
+        function saveChanges() {
+            const newUserName = document.getElementById("newUserName").value;
+            const newUserPassword = document.getElementById("newUserPassword").value;
+
+            // Guardar los cambios en sessionStorage (opcional)
+            sessionStorage.setItem("userName", newUserName);
+            sessionStorage.setItem("userPassword", newUserPassword);
+
+            // Aquí debes agregar la lógica para guardar en Firebase, si deseas hacerlo.
+            alert("Cambios guardados correctamente");
+        }
+
+        // Función para cerrar sesión
+        function logout() {
+            sessionStorage.clear(); // Limpiar sessionStorage
+            window.location.href = "index.html"; // Redirigir a index.html
+        }
+    </script>
+</body>
+</html>
