@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamientos Profesionales - SABI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="firebaseConfig.js"></script>
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./images/logo.jpg" alt="Logo SABI">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Servicios</a>
+                    <div class="dropdown-content">
+                        <a href="#odontologia">Odontología</a>
+                        <a href="#cosmetologia">Cosmetología</a>
+                        <a href="#terapia-fisica">Terapia Física</a>
+                        <a href="#psicologia">Psicología</a>
+                        <a href="#nutricion">Nutrición</a>
+                    </div>
+                </li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+            <!-- Perfil del usuario -->
+            <div class="user-profile">
+                <a href="profile.html" target="_blank">
+                    <img id="profile-logo" src="images/profile.png" alt="Perfil">
+                </a>
+                <span id="username"></span>
+            </div>
+
+            <script>
+                // Recupera el nombre del usuario del localStorage
+                const username = localStorage.getItem('username');
+                if (username) {
+                    document.getElementById('username').textContent = username;
+                }
+
+                document.getElementById("logoutButton").addEventListener("click", function () {
+    localStorage.removeItem('username'); // Borra el nombre del usuario de localStorage
+    window.location.href = "login.html"; // Redirige a la página de inicio de sesión
+});
+
+            </script>
+       
+    </header>
+    <!-- Carrusel de imágenes -->
+    <section class="carousel">
+        <div class="carousel-images">
+            <div class="slide" style="background-image: url('./images/banner1.jpg');">
+                <div class="carousel-text">
+                    <h1>Tratamientos Profesionales SABI</h1>
+                    <p>NUESTRA EXPERIENCIA SE PERMITE VER, LOS RESULTADOS SON NOTABLES.</p>
+                </div>
+            </div>
+            <!-- Agrega más slides aquí si es necesario -->
+               <!-- Slide 2 -->
+            <div class="slide" style="background-image: url('./images/banner2.jpg');">
+                <div class="carousel-text">
+                    <h1>Especialistas en salud y belleza</h1>
+                    <p>Servicios completos para el bienestar y cuidado personal.</p>
+                </div>
+            </div>
+    
+            <!-- Slide 3 -->
+            <div class="slide" style="background-image: url('./images/banner3.jpg');">
+                <div class="carousel-text">
+                    <h1>Resultados visibles</h1>
+                    <p>Confía en nuestros especialistas certificados.</p>
+                </div>
+            </div>
+    
+            <!-- Slide 4 -->
+            <div class="slide" style="background-image: url('./images/banner4.jpg');">
+                <div class="carousel-text">
+                    <h1>Atención personalizada</h1>
+                    <p>Nos preocupamos por tu salud y bienestar.</p>
+                </div>
+            </div>
+    
+            <!-- Slide 5 -->
+            <div class="slide" style="background-image: url('./images/banner5.jpg');">
+                <div class="carousel-text">
+                    <h1>Experiencia y profesionalismo</h1>
+                    <p>Confía en nuestro equipo de especialistas.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="carousel-buttons">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        
+    </section>
+
+</section>
+
+<!-- Sección Odontología -->
+<section id="odontologia" class="service-section">
+    <div class="service-content">
+        <h2>Odontología</h2>
+        <p>Ofrecemos una amplia gama de servicios odontológicos para el cuidado y la prevención de la salud bucal.</p>
+        <ul>
+            <li><strong>Limpiezas dentales:</strong> Mantenimiento regular de la higiene bucal.</li>
+            <li><strong>Ortodoncia:</strong> Tratamientos para corregir la alineación de los dientes.</li>
+            <li><strong>Implantes dentales:</strong> Sustitución de dientes perdidos.</li>
+            <li><strong>Blanqueamiento dental:</strong> Mejora la estética de tu sonrisa.</li>
+        </ul>
+        <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
+        <a href="plan-odontologia.html" class="btn-plan">Ver plan</a>
+        <a href="#" class="btn-buy">Comprar</a>
+        <a href="#" class="btn-cart" onclick="addToCart('Servicio de Odontología', 1.00)">Agregar al carrito</a>
+    </div>
+</section>
+
+<!-- Sección Cosmetología -->
+<section id="cosmetologia" class="service-section">
+    <div class="service-content">
+        <h2>Cosmetología</h2>
+        <p>Especialistas en el cuidado de la piel y tratamientos estéticos.</p>
+        <ul>
+            <li><strong>Faciales personalizados:</strong> Tratamientos específicos para cada tipo de piel.</li>
+            <li><strong>Rejuvenecimiento facial:</strong> Reduce los signos de la edad.</li>
+            <li><strong>Exfoliación química:</strong> Elimina células muertas para una piel más suave.</li>
+            <li><strong>Depilación láser:</strong> Eliminación del vello no deseado.</li>
+        </ul>
+        <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
+        <a href="plan-cosmetologia.html" class="btn-plan">Ver plan</a>
+        <a href="#" class="btn-buy">Comprar</a>
+        <a href="#" class="btn-cart" onclick="addToCart('Cosmetología', 1.00)">Agregar al carrito</a>
+    </div>
+</section>
+
+<!-- Sección Terapia Física -->
+<section id="terapia-fisica" class="service-section">
+    <div class="service-content">
+        <h2>Terapia Física</h2>
+        <p>Rehabilitación para mejorar la movilidad y aliviar el dolor.</p>
+        <ul>
+            <li><strong>Rehabilitación postoperatoria:</strong> Terapias para una recuperación óptima.</li>
+            <li><strong>Fisioterapia deportiva:</strong> Prevención y recuperación de lesiones.</li>
+            <li><strong>Masoterapia:</strong> Masajes terapéuticos para aliviar el dolor muscular.</li>
+            <li><strong>Terapia manual:</strong> Técnicas avanzadas para restaurar el movimiento.</li>
+        </ul>
+        <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
+        <a href="plan-terapia-fisica.html" class="btn-plan">Ver plan</a>
+        <a href="#" class="btn-buy">Comprar</a>
+        <a href="#" class="btn-cart" onclick="addToCart('Terapia Física', 1.00)">Agregar al carrito</a>
+    </div>
+</section>
+
+<!-- Sección Psicología -->
+<section id="psicologia" class="service-section">
+    <div class="service-content">
+        <h2>Psicología</h2>
+        <p>Atención psicológica integral para promover el bienestar emocional.</p>
+        <ul>
+            <li><strong>Terapia individual:</strong> Sesiones personalizadas para tratar ansiedad y depresión.</li>
+            <li><strong>Terapia de pareja:</strong> Mejorar la comunicación y resolver conflictos.</li>
+            <li><strong>Terapia familiar:</strong> Dinámicas familiares y resolución de conflictos.</li>
+            <li><strong>Terapia cognitivo-conductual:</strong> Enfoque en la modificación de patrones de pensamiento.</li>
+        </ul>
+        <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
+        <a href="plan-psicologia.html" class="btn-plan">Ver plan</a>
+        <a href="#" class="btn-buy">Comprar</a>
+        <a href="#" class="btn-cart" onclick="addToCart('Psicología', 1.00)">Agregar al carrito</a>
+    </div>
+</section>
+
+<!-- Sección Nutrición -->
+<section id="nutricion" class="service-section">
+    <div class="service-content">
+        <h2>Nutrición</h2>
+        <p>Planes alimenticios personalizados para mejorar tu salud y bienestar.</p>
+        <ul>
+            <li><strong>Evaluación nutricional:</strong> Diagnóstico detallado de tu estado nutricional.</li>
+            <li><strong>Planes personalizados:</strong> Dietas adaptadas a tus necesidades y objetivos.</li>
+            <li><strong>Consultas de seguimiento:</strong> Monitoreo del progreso y ajustes en el plan.</li>
+            <li><strong>Asesoría deportiva:</strong> Nutrición especializada para deportistas.</li>
+        </ul>
+        <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
+        <a href="plan-nutricion.html" class="btn-plan">Ver plan</a>
+        <a href="#" class="btn-buy">Comprar</a>
+        <a href="#" class="btn-cart" onclick="addToCart('Nutrición', 1.00)">Agregar al carrito</a>
+    </div>
+</section>
+
+
+
+    <!-- Modal de carrito -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <p>El producto ha sido agregado al carrito</p>
+            <button onclick="window.location.href='carrito.html'" class="btn-ver-carrito">Ver Carrito</button>
+            <button onclick="closeModal()" class="btn-continuar-comprando">Continuar comprando</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <footer>
+        <p>© 2024 SABI. Todos los derechos reservados.</p>
+    </footer>
+    <style>
+        #profile-logo {
+            width: 50px; /* Ajusta el tamaño de la imagen aquí */
+            height: auto;
+        }
+    </style>
+    
+</body>
+</html>
