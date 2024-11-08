@@ -32,7 +32,7 @@ try {
     const collectionName = `Citas-${nombre}-${formattedFecha}`;
 
     // Guarda la cita en Firebase
-    const citaRef = db.ref(`citas/`).push();
+    const citaRef = db.ref(`carrito/`).push();
     await citaRef.set({
         nombre: nombre,
         email: email,
