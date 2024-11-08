@@ -4,47 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras - SABI</title>
-    <!-- Incluye Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
-
-    <!-- Navbar con Bootstrap -->
+<body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1729651396/logo_lh6bp8.jpg" alt="Logo SABI" class="d-inline-block align-text-top">
-                    SABI
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="carrito.html">Carrito</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#contacto">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./images/logo.jpg" alt="Logo SABI">
             </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="container my-5 flex-grow-1">
-        <h1 class="text-center mb-4">Reservación de citas</h1>
-        <div id="cart-container" class="table-responsive">
-            <table id="cart-table" class="table table-bordered table-hover align-middle">
+    <main class="cart-page">
+        <h1>Carrito de Compras</h1>
+        <div id="cart-container">
+            <table id="cart-table">
                 <thead>
                     <tr>
-                        <th>Tratamiento</th>
+                        <th>Producto</th>
                         <th>Cantidad</th>
                         <th>Precio</th>
                         <th>Eliminar</th>
@@ -54,80 +36,18 @@
                     <!-- Los productos se agregarán aquí dinámicamente con JS -->
                 </tbody>
             </table>
-            <div class="cart-summary mt-4">
+            <div class="cart-summary">
                 <h3>Total: $<span id="total-price">0.00</span></h3>
-                <button id="checkout-btn" class="btn btn-success mt-3">Proceder con PayPal</button>
+                <button id="checkout-btn" class="btn-buy">Proceder con PayPal</button>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="text-center py-3 mt-auto bg-dark text-white">
+    <script src="script.js"></script>
+    <footer>
         <p>© 2024 SABI. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Bootstrap JS (opcional, para funcionalidades interactivas como el menú desplegable) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
     <script type="module" src="script-carrito.js"></script>
-
-    <!-- Estilos personalizados -->
-    <style>
-        /* Estilos adicionales */
-        body {
-            background-color: #f0f2f5;
-        }
-
-        /* Navbar */
-        .navbar {
-            background-color: #007bff; /* Color de fondo para la barra de navegación */
-        }
-        
-        .navbar-brand img {
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        .navbar .nav-link {
-            color: #ffffff !important;
-            font-weight: 500;
-            font-size: 16px;
-        }
-
-        .navbar .nav-link:hover {
-            color: #e0e0e0 !important;
-        }
-
-        /* Tabla del carrito */
-        #cart-table th {
-            background-color: #2979ce;
-            color: white;
-            text-align: center;
-        }
-
-        #cart-table tbody tr:hover {
-            background-color: #f8f9fa;
-        }
-
-        /* Resumen del carrito */
-        .cart-summary {
-            text-align: right;
-        }
-
-        .cart-summary h3 {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #2979ce;
-        }
-
-        footer p {
-            margin: 0;
-            color: #ffffff;
-        }
-    </style>
 </body>
 </html>
