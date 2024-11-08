@@ -19,8 +19,11 @@ const db = firebase.database();
 // guardarCita.js
 
 document.getElementById('citaForm').addEventListener('submit', async function(e) {
-    e.preventDefault(); // Previene que el formulario se envíe y recargue la página
+    e.preventDefault(); // Previene el envío y la redirección
+    console.log("Prevent default ejecutado"); // Verifica que esto se ejecute
+    
     // Código para guardar en Firebase aquí...
+
 
 
 // Obtiene los valores del formulario
