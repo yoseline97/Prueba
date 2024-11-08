@@ -36,7 +36,7 @@ document.getElementById("loginForm").addEventListener('submit', async function (
                 sessionStorage.setItem("userPassword", userData.CONTRA);
 
                 // Redirigir a profile.html
-                window.location.href = "index2.html";
+                window.location.href = "profile.html";
             } else {
                 alert("Contraseña incorrecta");
             }
