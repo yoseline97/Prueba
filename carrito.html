@@ -144,40 +144,5 @@
             color: #ffffff;
         }
     </style>
-    <!-- Main Content -->
-    <main class="container my-5 flex-grow-1">
-        <h1 class="text-center mb-4">Resumen de Cita Agendada</h1>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Correo Electrónico</th>
-                    <th>Fecha de la Cita</th>
-                    <th>Hora de la Cita</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id="citaNombre"></td>
-                    <td id="citaEmail"></td>
-                    <td id="citaFecha"></td>
-                    <td id="citaHora"></td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
-
-    <footer class="text-center py-3 mt-auto bg-dark text-white">
-        <p>© 2024 SABI. Todos los derechos reservados.</p>
-    </footer>
-
-    <script>
-        // Carga los datos de la cita desde sessionStorage
-        document.getElementById("citaNombre").textContent = sessionStorage.getItem('citaNombre') || 'No disponible';
-        document.getElementById("citaEmail").textContent = sessionStorage.getItem('citaEmail') || 'No disponible';
-        document.getElementById("citaFecha").textContent = sessionStorage.getItem('citaFecha') || 'No disponible';
-        document.getElementById("citaHora").textContent = sessionStorage.getItem('citaHora') || 'No disponible';
-    </script>
-
 </body>
 </html>
