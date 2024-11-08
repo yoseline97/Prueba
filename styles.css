@@ -316,23 +316,23 @@ body, html {
 
 /* Imágenes de fondo para cada sección */
 #odontologia {
-    background-image: url('./images/odontologia.jpg');
+    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775566/odontologia_erexzx.jpg');
 }
 
 #cosmetologia {
-    background-image: url('./images/cosmetologia.jpg');
+    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775579/cosmetologia_nkn4zf.jpg');
 }
 
 #terapia-fisica {
-    background-image: url('./images/terapia-fisica.jpg');
+    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775573/terapia-fisica_poch8h.jpg');
 }
 
 #psicologia {
-    background-image: url('./images/psicologia.jpg');
+    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775554/psicologia_kkjq1g.jpg');
 }
 
 #nutricion {
-    background-image: url('./images/nutricion.jpg');
+    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1729651446/nutricion_zsimtr.jpg');
 }
 
 /* Botón Ver Plan */
