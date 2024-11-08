@@ -20,12 +20,12 @@ const db = getDatabase(app);
 document.getElementById("loginForm").addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    const email = document.getElementById('email').value;
+    const email = document.getElementById('text').value;
     const password = document.getElementById('password').value;
 
     try {
         const dbRef = ref(db);
-        const snapshot = await get(child(dbRef, `clients/${email}`));
+        const snapshot = await get(child(dbRef, `clients/${text}`));
 
         if (snapshot.exists()) {
             const userData = snapshot.val();
@@ -34,10 +34,10 @@ document.getElementById("loginForm").addEventListener('submit', async function (
                 alert("Inicio de sesión exitoso");
 
                 // Guardar el email en sessionStorage para usarlo en profile.html
-                sessionStorage.setItem("userEmail", email);
+                sessionStorage.setItem("userEmail", text);
 
                 // Redirigir a profile.html directamente
-                window.location.href = "profile.html";
+                window.location.href = "index2.html";
             } else {
                 alert("Contraseña incorrecta");
             }
