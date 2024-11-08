@@ -1,237 +1,290 @@
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tratamientos Profesionales - SABI</title>
-        <link rel="stylesheet" href="styles.css">
-        <!-- Firebase Configuración -->
-    
-    </head>
-    <body>
-        <header>
-            <nav class="navbar">
-                <div class="logo">
-                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1729651396/logo_lh6bp8.jpg" alt="Logo SABI">
-            </div>
-                <ul class="nav-links">
-                    <li><a href="#">Inicio</a></li>
-                    <!-- Menú desplegable de Servicios -->
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn">Servicios</a>
-                        <div class="dropdown-content">
-                            <a href="#odontologia">Odontología</a>
-                            <a href="#cosmetologia">Cosmetología</a>
-                            <a href="#terapia-fisica">Terapia Física</a>
-                            <a href="#psicologia">Psicología</a>
-                            <a href="#nutricion">Nutrición</a>
-                        </div>
-                    </li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="login.html">Iniciar Sesión</a></li>
-                    <li><a href="carrito.html">Citas</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                    
-                </ul>
-            </nav>
 
-            
-        </header>
-    
-        <section class="carousel">
-            <div class="carousel-images">
-                <div class="slide" style="background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775579/cosmetologia_nkn4zf.jpg');">
-                    <div class="carousel-text">
-                        <h1>Tratamientos Profesionales SABI</h1>
-                        <p>NUESTRA EXPERIENCIA SE PERMITE VER, LOS RESULTADOS SON NOTABLES.</p>
-                    </div>
-                </div>
-        
-                <!-- Slide 2 -->
-                <div class="slide" style="background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1729651446/nutricion_zsimtr.jpg');">
-                    <div class="carousel-text">
-                        <h1>Especialistas en salud y belleza</h1>
-                        <p>Servicios completos para el bienestar y cuidado personal.</p>
-                    </div>
-                </div>
-        
-                <!-- Slide 3 -->
-                <div class="slide" style="background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775573/terapia-fisica_poch8h.jpg');">
-                    <div class="carousel-text">
-                        <h1>Resultados visibles</h1>
-                        <p>Confía en nuestros especialistas certificados.</p>
-                    </div>
-                </div>
-        
-                <!-- Slide 4 -->
-                <div class="slide" style="background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775554/psicologia_kkjq1g.jpg');">
-                    <div class="carousel-text">
-                        <h1>Atención personalizada</h1>
-                        <p>Nos preocupamos por tu salud y bienestar.</p>
-                    </div>
-                </div>
-        
-                <!-- Slide 5 -->
-                <div class="slide" style="background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775566/odontologia_erexzx.jpg');">
-                    <div class="carousel-text">
-                        <h1>Experiencia y profesionalismo</h1>
-                        <p>Confía en nuestro equipo de especialistas.</p>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- Botones para navegar en el carrusel -->
-            <div class="carousel-buttons">
-                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                <button class="next" onclick="moveSlide(1)">&#10095;</button>
-            </div>
-            <div class="carousel-buttons">
-                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                <button class="next" onclick="moveSlide(1)">&#10095;</button>
-            </div>
-        </section>
-    
-        <!-- Sección Odontología -->
-        <section id="odontologia" class="service-section">
-            <div class="service-content">
-                <h2>Odontología</h2>
-                <p>Ofrecemos una amplia gama de servicios odontológicos para el cuidado y la prevención de la salud bucal.</p>
-                <ul>
-                    <li><strong>Limpiezas dentales:</strong> Mantenimiento regular de la higiene bucal.</li>
-                    <li><strong>Ortodoncia:</strong> Tratamientos para corregir la alineación de los dientes.</li>
-                    <li><strong>Implantes dentales:</strong> Sustitución de dientes perdidos.</li>
-                    <li><strong>Blanqueamiento dental:</strong> Mejora la estética de tu sonrisa.</li>
-                </ul>
-                <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
-                <a href="plan-odontologia.html" class="btn-plan">Ver plan</a>
-                <a href="#" class="btn-buy">Comprar</a>
-                <a href="#" class="btn-cart" onclick="addToCart('Servicio de Odontología', 1.00)">Agendar citas</a>
-            </div>
-        </section>
-    
-        <!-- Sección Cosmetología -->
-        <section id="cosmetologia" class="service-section">
-            <div class="service-content">
-                <h2>Cosmetología</h2>
-                <p>Especialistas en el cuidado de la piel y tratamientos estéticos.</p>
-                <ul>
-                    <li><strong>Faciales personalizados:</strong> Tratamientos específicos para cada tipo de piel.</li>
-                    <li><strong>Rejuvenecimiento facial:</strong> Reduce los signos de la edad.</li>
-                    <li><strong>Exfoliación química:</strong> Elimina células muertas para una piel más suave.</li>
-                    <li><strong>Depilación láser:</strong> Eliminación del vello no deseado.</li>
-                </ul>
-                <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
-                <a href="plan-cosmetologia.html" class="btn-plan">Ver plan</a>
-                <a href="#" class="btn-buy">Comprar</a>
-                <a href="#" class="btn-cart" onclick="addToCart('Cosmetología', 1.00)">Agendar citas</a>
-            </div>
-        </section>
-    
-        <!-- Sección Terapia Física -->
-        <section id="terapia-fisica" class="service-section">
-            <div class="service-content">
-                <h2>Terapia Física</h2>
-                <p>Rehabilitación para mejorar la movilidad y aliviar el dolor.</p>
-                <ul>
-                    <li><strong>Rehabilitación postoperatoria:</strong> Terapias para una recuperación óptima.</li>
-                    <li><strong>Fisioterapia deportiva:</strong> Prevención y recuperación de lesiones.</li>
-                    <li><strong>Masoterapia:</strong> Masajes terapéuticos para aliviar el dolor muscular.</li>
-                    <li><strong>Terapia manual:</strong> Técnicas avanzadas para restaurar el movimiento.</li>
-                </ul>
-                <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
-                <a href="plan-terapia-fisica.html" class="btn-plan">Ver plan</a>
-                <a href="#" class="btn-buy">Comprar</a>
-                <a href="#" class="btn-cart" onclick="addToCart('Terapia Física', 1.00)">Agendar citas</a>
-            </div>
-        </section>
-    
-        <!-- Sección Psicología -->
-        <section id="psicologia" class="service-section">
-            <div class="service-content">
-                <h2>Psicología</h2>
-                <p>Atención psicológica integral para promover el bienestar emocional.</p>
-                <ul>
-                    <li><strong>Terapia individual:</strong> Sesiones personalizadas para tratar ansiedad y depresión.</li>
-                    <li><strong>Terapia de pareja:</strong> Mejorar la comunicación y resolver conflictos.</li>
-                    <li><strong>Terapia familiar:</strong> Dinámicas familiares y resolución de conflictos.</li>
-                    <li><strong>Terapia cognitivo-conductual:</strong> Enfoque en la modificación de patrones de pensamiento.</li>
-                </ul>
-                <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
-                <a href="plan-psicologia.html" class="btn-plan">Ver plan</a>
-                <a href="#" class="btn-buy">Comprar</a>
-                <a href="#" class="btn-cart" onclick="addToCart('Psicología', 1.00)">Agendar citas</a>
-            </div>
-        </section>
-    
-        <!-- Sección Nutrición -->
-        <section id="nutricion" class="service-section">
-            <div class="service-content">
-                <h2>Nutrición</h2>
-                <p>Planes alimenticios personalizados para mejorar tu salud y bienestar.</p>
-                <ul>
-                    <li><strong>Evaluación nutricional:</strong> Diagnóstico detallado de tu estado nutricional.</li>
-                    <li><strong>Planes personalizados:</strong> Dietas adaptadas a tus necesidades y objetivos.</li>
-                    <li><strong>Consultas de seguimiento:</strong> Monitoreo del progreso y ajustes en el plan.</li>
-                    <li><strong>Asesoría deportiva:</strong> Nutrición especializada para deportistas.</li>
-                </ul>
-                <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
-                <a href="plan-nutricion.html" class="btn-plan">Ver plan</a>
-                <a href="#" class="btn-buy">Comprar</a>
-                <a href="#" class="btn-cart" onclick="addToCart('Nutrición', 1.00)">Agendar citas</a>
-            </div>
-        </section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamientos Profesionales - SABI</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase Configuración -->
 
-        <section id="contacto" class="contact-section">
-            <div class="contact-container">
-                <!-- Contenido de Contacto -->
-                <div class="contact-content">
-                    <h1 class="contact-title">SABI – Centro Médico</h1>
-                    <p><a href="tel:+521234567890" class="contact-link">Mostrar número</a></p>
-                    <p>SABI, Av Tito Estrada Ote N10, Centro, 42730 Progreso, Hgo., México</p>
-                    <p><a href="https://www.google.com/maps?q=SABI+Centro+Medico,+Av+Tito+Estrada+Ote+N10,+Centro,+42730+Progreso,+Hgo.,+Mexico" target="_blank" class="contact-link">Cómo llegar</a></p>
-                    <button onclick="window.location.href='tel:+521234567890'" class="contact-btn">Llamar para reservar</button>
-                </div>
-                
-                <!-- Imagen de Lado -->
-                <div class="contact-image">
-                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731040142/WhatsApp_Image_2024-11-07_at_22.18.55_sclepd.jpg" alt="Imagen de tratamiento" />
-                </div>
-            </div> </section>
+</head>
 
-            <!-- Sección de Mapa y Horario de Apertura -->
-<section id="ubicacion-horario" class="ubicacion-horario-section">
-    <div class="mapa-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.2774541542176!2d-99.19369402517418!3d20.24732478121366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d3d7f3697ab833%3A0x41e202aa404df5df!2sSABI%20-%20Centro%20M%C3%A9dico!5e0!3m2!1ses-419!2smx!4v1731043476137!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <p>SABI, Av Tito Estrada Ote N10, Centro, 42730 Progreso, Hgo., Mexico</p>
-    </div>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1729651396/logo_lh6bp8.jpg"
+                    alt="Logo SABI">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <!-- Menú desplegable de Servicios -->
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Servicios</a>
+                    <div class="dropdown-content">
+                        <a href="#odontologia">Odontología</a>
+                        <a href="#cosmetologia">Cosmetología</a>
+                        <a href="#terapia-fisica">Terapia Física</a>
+                        <a href="#psicologia">Psicología</a>
+                        <a href="#nutricion">Nutrición</a>
+                        <a href="#medicina-estetica">Medicina Estética</a>
 
-    <div class="horario-container">
-        <h2>Horario de apertura</h2>
-        <ul class="horario-list">
-            <li><strong>Lunes:</strong> 09:00 a.m. – 07:00 p.m.</li>
-            <li><strong>Martes:</strong> 09:00 a.m. – 07:00 p.m.</li>
-            <li><strong>Miércoles:</strong> 09:00 a.m. – 07:00 p.m.</li>
-            <li><strong>Jueves:</strong> 09:00 a.m. – 07:00 p.m.</li>
-            <li><strong>viernes:</strong> 09:00 a.m. – 07:00 p.m.</li>
-            <li><strong>Sábado:</strong> 09:00 a.m. – 05:00 p.m.</li>
-            <li><strong>Domingo:</strong> Cerrado</li>
-        </ul></section>
-        
-    
-        <!-- Modal para ver el carrito o continuar comprando -->
-        <div id="cart-modal" class="modal">
-            <div class="modal-content">
-                <p>El producto ha sido agregado al carrito</p>
-                <button onclick="window.location.href='carrito.html'" class="btn-ver-carrito">Ver Carrito</button>
-                <button onclick="closeModal()" class="btn-continuar-comprando">Continuar comprando</button>
+                    </div>
+                </li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="carrito.html">Citas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+
+            </ul>
+        </nav>
+
+
+    </header>
+
+    <section class="carousel">
+        <div class="carousel-images">
+            <div class="slide"
+                style="background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775579/cosmetologia_nkn4zf.jpg');">
+                <div class="carousel-text">
+                    <h1>Tratamientos Profesionales SABI</h1>
+                    <p>NUESTRA EXPERIENCIA SE PERMITE VER, LOS RESULTADOS SON NOTABLES.</p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide"
+                style="background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1729651446/nutricion_zsimtr.jpg');">
+                <div class="carousel-text">
+                    <h1>Especialistas en salud y belleza</h1>
+                    <p>Servicios completos para el bienestar y cuidado personal.</p>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide"
+                style="background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775573/terapia-fisica_poch8h.jpg');">
+                <div class="carousel-text">
+                    <h1>Resultados visibles</h1>
+                    <p>Confía en nuestros especialistas certificados.</p>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide"
+                style="background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775554/psicologia_kkjq1g.jpg');">
+                <div class="carousel-text">
+                    <h1>Atención personalizada</h1>
+                    <p>Nos preocupamos por tu salud y bienestar.</p>
+                </div>
+            </div>
+
+               <!-- Slide - Medicina Estética -->
+        <div class="slide" style="background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1731094670/Medicinaestetica2_pwqmaj.jpg');">
+            <div class="carousel-text">
+                <h1>Confianza y calidad en estética</h1>
+                <p>Realza tu belleza con nuestros tratamientos especializados.</p>
             </div>
         </div>
-    
-        <script src="script.js"></script>
-        <footer>
-            <p>© 2024 SABI. Todos los derechos reservados.</p>
-        </footer>
+        
+            <!-- Slide 5 -->
+            <div class="slide"
+                style="background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775566/odontologia_erexzx.jpg');">
+                <div class="carousel-text">
+                    <h1>Experiencia y profesionalismo</h1>
+                    <p>Confía en nuestro equipo de especialistas.</p>
+                </div>
+            </div>
+        </div>
 
-    
+     
 
-    </body>
-    </html>
+
+        <!-- Botones para navegar en el carrusel -->
+        <div class="carousel-buttons">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <div class="carousel-buttons">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Sección Odontología -->
+    <section id="odontologia" class="service-section">
+        <div class="service-content">
+            <h2>Odontología</h2>
+            <p>Ofrecemos una amplia gama de servicios odontológicos para el cuidado y la prevención de la salud bucal.
+            </p>
+            <ul>
+                <li><strong>Limpiezas dentales:</strong> Mantenimiento regular de la higiene bucal.</li>
+                <li><strong>Ortodoncia:</strong> Tratamientos para corregir la alineación de los dientes.</li>
+                <li><strong>Implantes dentales:</strong> Sustitución de dientes perdidos.</li>
+                <li><strong>Blanqueamiento dental:</strong> Mejora la estética de tu sonrisa.</li>
+            </ul>
+            <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
+            <a href="plan-odontologia.html" class="btn-plan">Paquetes</a>
+            <a href="#" class="btn-buy">Comprar</a>
+            <a href="#" class="btn-cart" onclick="addToCart('Servicio de Odontología', 1.00)">Agendar citas</a>
+        </div>
+    </section>
+
+    <!-- Sección Cosmetología -->
+    <section id="cosmetologia" class="service-section">
+        <div class="service-content">
+            <h2>Cosmetología</h2>
+            <p>Especialistas en el cuidado de la piel y tratamientos estéticos.</p>
+            <ul>
+                <li><strong>Faciales personalizados:</strong> Tratamientos específicos para cada tipo de piel.</li>
+                <li><strong>Rejuvenecimiento facial:</strong> Reduce los signos de la edad.</li>
+                <li><strong>Exfoliación química:</strong> Elimina células muertas para una piel más suave.</li>
+                <li><strong>Depilación láser:</strong> Eliminación del vello no deseado.</li>
+            </ul>
+            <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
+            <a href="plan-cosmetologia.html" class="btn-plan">Paquetes</a>
+            <a href="#" class="btn-buy">Comprar</a>
+            <a href="#" class="btn-cart" onclick="addToCart('Cosmetología', 1.00)">Agendar citas</a>
+        </div>
+    </section>
+
+    <!-- Sección Terapia Física -->
+    <section id="terapia-fisica" class="service-section">
+        <div class="service-content">
+            <h2>Terapia Física</h2>
+            <p>Rehabilitación para mejorar la movilidad y aliviar el dolor.</p>
+            <ul>
+                <li><strong>Rehabilitación postoperatoria:</strong> Terapias para una recuperación óptima.</li>
+                <li><strong>Fisioterapia deportiva:</strong> Prevención y recuperación de lesiones.</li>
+                <li><strong>Masoterapia:</strong> Masajes terapéuticos para aliviar el dolor muscular.</li>
+                <li><strong>Terapia manual:</strong> Técnicas avanzadas para restaurar el movimiento.</li>
+            </ul>
+            <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
+            <a href="plan-terapia-fisica.html" class="btn-plan">Paquetes</a>
+            <a href="#" class="btn-buy">Comprar</a>
+            <a href="#" class="btn-cart" onclick="addToCart('Terapia Física', 1.00)">Agendar citas</a>
+        </div>
+    </section>
+
+    <!-- Sección Psicología -->
+    <section id="psicologia" class="service-section">
+        <div class="service-content">
+            <h2>Psicología</h2>
+            <p>Atención psicológica integral para promover el bienestar emocional.</p>
+            <ul>
+                <li><strong>Terapia individual:</strong> Sesiones personalizadas para tratar ansiedad y depresión.</li>
+                <li><strong>Terapia de pareja:</strong> Mejorar la comunicación y resolver conflictos.</li>
+                <li><strong>Terapia familiar:</strong> Dinámicas familiares y resolución de conflictos.</li>
+                <li><strong>Terapia cognitivo-conductual:</strong> Enfoque en la modificación de patrones de
+                    pensamiento.</li>
+            </ul>
+            <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
+            <a href="plan-psicologia.html" class="btn-plan">Paquetes</a>
+            <a href="#" class="btn-buy">Comprar</a>
+            <a href="#" class="btn-cart" onclick="addToCart('Psicología', 1.00)">Agendar citas</a>
+        </div>
+    </section>
+
+    <!-- Sección Nutrición -->
+    <section id="nutricion" class="service-section">
+        <div class="service-content">
+            <h2>Nutrición</h2>
+            <p>Planes alimenticios personalizados para mejorar tu salud y bienestar.</p>
+            <ul>
+                <li><strong>Evaluación nutricional:</strong> Diagnóstico detallado de tu estado nutricional.</li>
+                <li><strong>Planes personalizados:</strong> Dietas adaptadas a tus necesidades y objetivos.</li>
+                <li><strong>Consultas de seguimiento:</strong> Monitoreo del progreso y ajustes en el plan.</li>
+                <li><strong>Asesoría deportiva:</strong> Nutrición especializada para deportistas.</li>
+            </ul>
+            <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
+            <a href="plan-nutricion.html" class="btn-plan">Paquetes</a>
+            <a href="#" class="btn-buy">Comprar</a>
+            <a href="#" class="btn-cart" onclick="addToCart('Nutrición', 1.00)">Agendar citas</a>
+        </div>
+    </section>¿
+
+    <!-- Sección Medicina Estética -->
+    <section id="medicina-estetica" class="service-section">
+        <div class="service-content">
+            <h2>Medicina Estética</h2>
+            <p>Tratamientos personalizados para mejorar tu apariencia y confianza.</p>
+            <ul>
+                <li><strong>Evaluación estética:</strong> Análisis integral de tus necesidades y objetivos estéticos.
+                </li>
+                <li><strong>Planes de rejuvenecimiento:</strong> Tratamientos personalizados para mejorar la salud de tu
+                    piel y apariencia.</li>
+                <li><strong>Seguimiento de tratamientos:</strong> Consultas de control para ajustar y optimizar los
+                    resultados.</li>
+                <li><strong>Asesoría post-tratamiento:</strong> Consejos y cuidados para mantener los resultados.</li>
+            </ul>
+            <!-- Botones para Ver plan, Comprar y Agregar al carrito -->
+            <a href="plan-medicina.html" class="btn-plan">Paquetes</a>
+            <a href="#" class="btn-buy">Comprar</a>
+            <a href="#" class="btn-cart" onclick="addToCart('Medicina Estética', 1.00)">Agendar citas</a>
+        </div>
+    </section>
+
+
+    <section id="contacto" class="contact-section">
+        <div class="contact-container">
+            <!-- Contenido de Contacto -->
+            <div class="contact-content">
+                <h1 class="contact-title">SABI – Centro Médico</h1>
+                <p><a href="tel:+521234567890" class="contact-link">Mostrar número</a></p>
+                <p>SABI, Av Tito Estrada Ote N10, Centro, 42730 Progreso, Hgo., México</p>
+                <p><a href="https://www.google.com/maps?q=SABI+Centro+Medico,+Av+Tito+Estrada+Ote+N10,+Centro,+42730+Progreso,+Hgo.,+Mexico"
+                        target="_blank" class="contact-link">Cómo llegar</a></p>
+                <button onclick="window.location.href='tel:+521234567890'" class="contact-btn">Llamar para
+                    reservar</button>
+            </div>
+
+            <!-- Imagen de Lado -->
+            <div class="contact-image">
+                <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731040142/WhatsApp_Image_2024-11-07_at_22.18.55_sclepd.jpg"
+                    alt="Imagen de tratamiento" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Mapa y Horario de Apertura -->
+    <section id="ubicacion-horario" class="ubicacion-horario-section">
+        <div class="mapa-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.2774541542176!2d-99.19369402517418!3d20.24732478121366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d3d7f3697ab833%3A0x41e202aa404df5df!2sSABI%20-%20Centro%20M%C3%A9dico!5e0!3m2!1ses-419!2smx!4v1731043476137!5m2!1ses-419!2smx"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>SABI, Av Tito Estrada Ote N10, Centro, 42730 Progreso, Hgo., Mexico</p>
+        </div>
+
+        <div class="horario-container">
+            <h2>Horario de apertura</h2>
+            <ul class="horario-list">
+                <li><strong>Lunes:</strong> 09:00 a.m. – 07:00 p.m.</li>
+                <li><strong>Martes:</strong> 09:00 a.m. – 07:00 p.m.</li>
+                <li><strong>Miércoles:</strong> 09:00 a.m. – 07:00 p.m.</li>
+                <li><strong>Jueves:</strong> 09:00 a.m. – 07:00 p.m.</li>
+                <li><strong>viernes:</strong> 09:00 a.m. – 07:00 p.m.</li>
+                <li><strong>Sábado:</strong> 09:00 a.m. – 05:00 p.m.</li>
+                <li><strong>Domingo:</strong> Cerrado</li>
+            </ul>
+    </section>
+
+
+    <!-- Modal para ver el carrito o continuar comprando -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <p>El producto ha sido agregado al carrito</p>
+            <button onclick="window.location.href='carrito.html'" class="btn-ver-carrito">Ver Carrito</button>
+            <button onclick="closeModal()" class="btn-continuar-comprando">Continuar comprando</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <footer>
+        <p>© 2024 SABI. Todos los derechos reservados.</p>
+    </footer>
+
+
+
+</body>
+
+</html>
