@@ -14,7 +14,7 @@ const firebaseConfig = {
 
 // Inicializa Firebase
 const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
+const db = firebase.database(app);
 
 // guardarCita.js
 
