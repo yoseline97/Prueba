@@ -521,3 +521,7 @@ footer {
 .horario-list li strong {
     color: #333;
 }
+
+#medicina-estetica {
+    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1731094670/Medicinaestetica2_pwqmaj.jpg'); /* Cambia el enlace */
+}
