@@ -40,10 +40,11 @@ try {
         hora: hora
     });
 
+    window.location.href = "carrito.html";
+
     document.getElementById('statusMessage').innerText = "Cita agendada exitosamente.";
     document.getElementById('citaForm').reset();
     console.log("Cita guardada en Firebase");
-    window.location.href = "carrito.html";
 } catch (error) {
     document.getElementById('statusMessage').innerText = "Error al agendar la cita: " + error.message;
     console.error("Error al guardar la cita en Firebase:", error);
