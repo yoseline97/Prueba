@@ -32,7 +32,7 @@ try {
     const collectionName = `Citas-${nombre}-${formattedFecha}`;
 
     // Guarda la cita en Firebase
-    const citaRef = db.ref(`citas/`).push();
+    const citaRef = db.ref(`carrito/`).push();
     await citaRef.set({
         nombre: nombre,
         email: email,
@@ -43,7 +43,6 @@ try {
     document.getElementById('statusMessage').innerText = "Cita agendada exitosamente.";
     document.getElementById('citaForm').reset();
     console.log("Cita guardada en Firebase");
-    window.location.href = "carrito.html";
 } catch (error) {
     document.getElementById('statusMessage').innerText = "Error al agendar la cita: " + error.message;
     console.error("Error al guardar la cita en Firebase:", error);
