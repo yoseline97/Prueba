@@ -3,32 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan Detallado - Odontología</title>
-    <link rel="stylesheet" href="stylesPlanes.css">
+    <title>SABI - Paquetes de Odontología</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Establecer un tamaño fijo para las imágenes en las tarjetas */
+        .card-img-top {
+            width: 100%;
+            height: 250px; /* Establece una altura fija para las imágenes */
+            object-fit: cover; /* Asegura que las imágenes no se deformen, manteniendo su proporción */
+        }
+
+        /* Estilo para el menú desplegable */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Estilo para el logo en la barra de navegación */
+        .navbar-brand img {
+            max-height: 40px;
+        }
+
+        footer {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Plan Detallado de Odontología</h1>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Espacio para el logo -->
+            <a class="navbar-brand" href="#">
+                <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731088716/logo2_q9emxe.jpg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"> <a class="nav-link" href="index.html">Inicio</a></li>
+                    <!-- Menú desplegable de Servicios -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index.html#odontologia">Odontología</a></li>
+                            <li><a class="dropdown-item" href="index.html#cosmetologia">Cosmetología</a></li>
+                            <li><a class="dropdown-item" href="index.html#terapia-fisica">Terapia Física</a></li>
+                            <li><a class="dropdown-item" href="index.html#psicologia">Psicología</a></li>
+                            <li><a class="dropdown-item" href="index.html#nutricion">Nutrición</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="carrito.html">Citas</a></li>
+                    <li class="nav-item">  <a class="nav-link" href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Paquetes de Odontología</h1>
+            <p class="lead">Soluciones integrales para tu salud dental</p>
+        </div>
     </header>
-    
-    <section>
-        <p>Este es el plan detallado para los servicios de odontología que ofrecemos, con precios y características adicionales para cada tratamiento.</p>
-        <ul>
-            <li><strong>Limpiezas dentales:</strong> $50 por sesión. Se recomienda cada 6 meses.</li>
-            <li><strong>Ortodoncia:</strong> Desde $500 según la evaluación inicial. Incluye brackets metálicos o de cerámica.</li>
-            <li><strong>Implantes dentales:</strong> Desde $1500 por implante. Incluye consulta y seguimiento postoperatorio.</li>
-            <li><strong>Blanqueamiento dental:</strong> $200 por tratamiento. Mejora la estética de tu sonrisa en una sesión.</li>
-        </ul>
 
-        <!-- Botones Comprar y Agregar al carrito -->
-        <!-- Botón Contratar -->
-<a href="agendar-citas.html" class="btn-hire">Contratar</a>
+    <!-- Dental Packages Section -->
+    <div class="container my-5">
+        <div class="row text-center">
+            <!-- Paquete de Limpieza Dental -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731088235/limpieza-dental_afx3z8.jpg" class="card-img-top" alt="Limpieza Dental">
+                    <div class="card-body">
+                        <h5 class="card-title">Limpieza Dental</h5>
+                        <p class="card-text">Elimina placa y sarro, ayuda a mantener una sonrisa saludable.</p>
+                        <p class="card-text"><strong>Precio: $500 MXN</strong></p>
+                        <a href="carrito.html" class="btn btn-success">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Paquete de Blanqueamiento Dental -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731088406/blanqueamiento_cyi2jg.jpg" class="card-img-top" alt="Blanqueamiento Dental">
+                    <div class="card-body">
+                        <h5 class="card-title">Blanqueamiento Dental</h5>
+                        <p class="card-text">Tratamiento para aclarar el tono de tus dientes y lograr una sonrisa brillante.</p>
+                        <p class="card-text"><strong>Precio: $1,200 MXN</strong></p>
+                        <a href="carrito.html" class="btn btn-success">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Paquete de Ortodoncia -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731088478/Ortodoncia_pem1jt.jpg" class="card-img-top" alt="Ortodoncia">
+                    <div class="card-body">
+                        <h5 class="card-title">Ortodoncia</h5>
+                        <p class="card-text">Corrección de alineación dental para mejorar la estética y funcionalidad.</p>
+                        <p class="card-text"><strong>Precio: $8,000 MXN</strong> (primer pago)</p>
+                        <a href="carrito.html" class="btn btn-success">Contratar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <a href="#" class="btn-cart">Agregar al carrito</a>
-    </section>
+        <div class="row text-center mt-4">
+            <!-- Paquete de Extracción de Muelas -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731088560/extraccion_de_muelas_soguue.jpg" class="card-img-top" alt="Extracción de Muelas">
+                    <div class="card-body">
+                        <h5 class="card-title">Extracción de Muelas</h5>
+                        <p class="card-text">Extracción de muelas con técnicas seguras y sin dolor.</p>
+                        <p class="card-text"><strong>Precio: $1,500 MXN</strong> (por muela)</p>
+                        <a href="carrito.html" class="btn btn-success">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Paquete de Resina Estética -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731088611/resina-de-alta-estetica_ppwlim.jpg" class="card-img-top" alt="Resina Estética">
+                    <div class="card-body">
+                        <h5 class="card-title">Resina Estética</h5>
+                        <p class="card-text">Relleno estético que se adapta al color de tus dientes.</p>
+                        <p class="card-text"><strong>Precio: $700 MXN</strong> (por pieza)</p>
+                        <a href="carrito.html" class="btn btn-success">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Paquete de Implante Dental -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731088661/removable_hqznyu.jpg" class="card-img-top" alt="Implante Dental">
+                    <div class="card-body">
+                        <h5 class="card-title">Implante Dental</h5>
+                        <p class="card-text">Solución permanente para reemplazar dientes perdidos.</p>
+                        <p class="card-text"><strong>Precio: $15,000 MXN</strong> (por implante)</p>
+                        <a href="carrito.html" class="btn btn-success">Contratar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <footer>
-        <a href="index.html" class="btn-plan">Volver a Inicio</a>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 SABI - Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
