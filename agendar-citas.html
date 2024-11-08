@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar Cita</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Incluye Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"></script>
 </head>
 <body>
     <div class="container">
@@ -30,43 +27,10 @@
         <p id="statusMessage"></p>
     </div>
 
-    <script>
-        // Configuración de Firebase (reemplaza con tu configuración de Firebase)
-        const firebaseConfig = {
-    apiKey: "AIzaSyAQIa6cMVOojiZZ5zIPkWLGhN5aiMQ0UYs",
-    authDomain: "sabi-70919.firebaseapp.com",
-    projectId: "sabi-70919",
-    storageBucket: "sabi-70919.firebasestorage.app",
-    messagingSenderId: "106476736453",
-    appId: "1:106476736453:web:12142ebafdcdfce7f085ac"
-};
-
-        // Inicializa Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const db = firebase.database();
-
-        // Función para guardar la cita en Firebase
-        document.getElementById('citaForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const nombre = document.getElementById('nombre').value;
-            const email = document.getElementById('email').value;
-            const fecha = document.getElementById('fecha').value;
-            const hora = document.getElementById('hora').value;
-
-            const citaRef = db.ref('citas').push();
-            citaRef.set({
-                nombre: nombre,
-                email: email,
-                fecha: fecha,
-                hora: hora
-            }).then(() => {
-                document.getElementById('statusMessage').innerText = "Cita agendada exitosamente.";
-                document.getElementById('citaForm').reset();
-            }).catch((error) => {
-                document.getElementById('statusMessage').innerText = "Error al agendar la cita: " + error.message;
-            });
-        });
-    </script>
+    <!-- Enlace al archivo JavaScript -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"></script>
+    <script src="firebaseConfig.js"></script> <!-- Archivo de configuración de Firebase -->
+    <script src="guardarCita.js"></script> <!-- Archivo JavaScript para guardar citas -->
 </body>
 </html>
