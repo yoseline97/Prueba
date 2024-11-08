@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
-import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
+
 // Configuración de Firebase (reemplaza con tu configuración de Firebase)
 const firebaseConfig = {
     apiKey: "AIzaSyAQIa6cMVOojiZZ5zIPkWLGhN5aiMQ0UYs",
@@ -19,8 +20,6 @@ const db = firebase.database(app);
 document.getElementById('citaForm').addEventListener('submit', async function(e) {
     e.preventDefault(); // Previene el envío y la redirección
 
-
-
 // Obtiene los valores del formulario
 const nombre = document.getElementById('nombre').value;
 const email = document.getElementById('email').value;
@@ -33,7 +32,7 @@ try {
     const collectionName = `Citas-${nombre}-${formattedFecha}`;
 
     // Guarda la cita en Firebase
-    const citaRef = db.ref(CITAS).push();
+    const citaRef = db.ref(`citas/`).push();
     await citaRef.set({
         nombre: nombre,
         email: email,
