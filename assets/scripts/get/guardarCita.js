@@ -1,4 +1,5 @@
 // firebaseConfig.js
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
 import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
 // Configuración de Firebase (reemplaza con tu configuración de Firebase)
@@ -17,35 +18,36 @@ const db = firebase.database();
 
 // guardarCita.js
 
-document.getElementById('citaForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.getElementById('citaForm').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Previene que el formulario se envíe y recargue la página
+    // Código para guardar en Firebase aquí...
 
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const fecha = document.getElementById('fecha').value;
-    const hora = document.getElementById('hora').value;
 
-    try {
-        const dbRef = ref(db);
-        const snapshot = await get(child(dbRef, `citas/${email}`)); // Busca en el nodo citas usando el correo electrónico
-    
-        if (snapshot.exists()) {
-            const citaData = snapshot.val();
-    
-            // Puedes cambiar los campos para adaptarlos a los datos que hayas guardado en Firebase
-            sessionStorage.setItem("citaNombre", citaData.nombre);
-            sessionStorage.setItem("citaEmail", email);
-            sessionStorage.setItem("citaFecha", citaData.fecha);
-            sessionStorage.setItem("citaHora", citaData.hora);
-    
-            alert("Cita encontrada y guardada en la sesión");
-    
-            // Redirigir a profile.html
-            window.location.href = "profile.html";
-        } else {
-            alert("Cita no encontrada");
-        }
-    } catch (error) {
-        console.error("Error al obtener datos de Firebase:", error);
-    }
+// Obtiene los valores del formulario
+const nombre = document.getElementById('nombre').value;
+const email = document.getElementById('email').value;
+const fecha = document.getElementById('fecha').value;
+const hora = document.getElementById('hora').value;
+
+try {
+    // Crea un identificador único para la colección de citas
+    const formattedFecha = fecha.replace(/-/g, '');
+    const collectionName = `Citas-${nombre}-${formattedFecha}`;
+
+    // Guarda la cita en Firebase
+    const citaRef = db.ref(CITAS).push();
+    await citaRef.set({
+        nombre: nombre,
+        email: email,
+        fecha: fecha,
+        hora: hora
+    });
+
+    document.getElementById('statusMessage').innerText = "Cita agendada exitosamente.";
+    document.getElementById('citaForm').reset();
+    console.log("Cita guardada en Firebase");
+} catch (error) {
+    document.getElementById('statusMessage').innerText = "Error al agendar la cita: " + error.message;
+    console.error("Error al guardar la cita en Firebase:", error);
+}
 });
