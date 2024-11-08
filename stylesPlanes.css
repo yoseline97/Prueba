@@ -54,3 +54,43 @@ ul li {
 .btn-hire:hover {
     background-color: #FF5722;
 }
+
+/* Estilo del botón Agregar al carrito */
+.btn-cart {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-right: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-cart:hover {
+    background-color: #1976D2;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo del botón Volver a Inicio */
+.btn-plan {
+    display: inline-block;
+    background-color: #FF7043;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-plan:hover {
+    background-color: #FF5722;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
