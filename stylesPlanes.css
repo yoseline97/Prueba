@@ -38,17 +38,17 @@ ul li {
 
 /* Estilo del botón Contratar */
 .btn-hire {
-    display: block;
-    margin: 20px auto;
-    width: 80%;
-    padding: 12px;
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
     text-align: center;
-    background-color: #FF7043;
-    color: #fff;
-    border-radius: 8px;
     font-weight: bold;
+    border-radius: 8px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    margin-right: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-hire:hover {
