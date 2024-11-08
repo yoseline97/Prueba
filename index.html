@@ -5,8 +5,7 @@
         <title>Tratamientos Profesionales - SABI</title>
         <link rel="stylesheet" href="styles.css">
         <!-- Firebase Configuración -->
-        <script type="module" src="firebaseConfig.js"></script>
-    <script type="module" src="script.js"></script>
+    
     </head>
     <body>
         <header>
@@ -30,16 +29,12 @@
                     <li><a href="#">Contacto</a></li>
                     <li><a href="login.html">Iniciar Sesión</a></li>
                     <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                     
                 </ul>
             </nav>
-    
-    
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Mi Proyecto en Firebase</title>
-            <link rel="stylesheet" href="css/styles.css">
-            <script defer src="js/app.js"></script>
+
+            
         </header>
     
         <section class="carousel">
@@ -184,6 +179,26 @@
                 <a href="#" class="btn-cart" onclick="addToCart('Nutrición', 1.00)">Agregar al carrito</a>
             </div>
         </section>
+        <section id="contacto" class="contact-section">
+            <h2>Contacto</h2>
+            <p>Si tienes alguna pregunta o deseas más información, no dudes en contactarnos.</p>
+            <form id="contactForm">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="phone">Número de Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="statusMessage"></p> <!-- Mensaje de estado para mostrar confirmación -->
+        </section>
+        
+        
+        
     
         <!-- Modal para ver el carrito o continuar comprando -->
         <div id="cart-modal" class="modal">
@@ -198,21 +213,8 @@
         <footer>
             <p>© 2024 SABI. Todos los derechos reservados.</p>
         </footer>
-    <script>
-        // Configuración de Firebase
-        const firebaseConfig = {
-          apiKey: "AIzaSyCxJU6YZvFg5VM9VYXzBq1r228JNXYEgRU",
-    authDomain: "sabi-d0275.firebaseapp.com",
-    projectId: "sabi-d0275",
-    storageBucket: "sabi-d0275.appspot.com",
-    messagingSenderId: "248059298666",
-    appId: "1:248059298666:web:61ff8a18dc00e5ca975b13",
-        };
+
     
-        // Inicializar Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-      </script>
-    
+
     </body>
     </html>
