@@ -334,7 +334,6 @@ body, html {
 #nutricion {
     background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1729651446/nutricion_zsimtr.jpg');
 }
-
 /* Botón Ver Plan */
 .btn-plan {
     display: inline-block;
@@ -406,7 +405,6 @@ footer {
     width: 100%;
 }
 
-
 .contact-section {
     background-color: #f9f9f9;
     padding: 40px;
@@ -474,4 +472,51 @@ footer {
     height: auto;
     border-radius: 0 10px 10px 0;
     object-fit: cover;
+}
+
+.ubicacion-horario-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px;
+    background-color: #f9f9f9;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.mapa-container {
+    flex: 1;
+    text-align: left;
+}
+
+.mapa-container p {
+    font-size: 1em;
+    color: #333;
+    margin-top: 10px;
+}
+
+.horario-container {
+    flex: 1;
+    text-align: left;
+}
+
+.horario-container h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.horario-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.horario-list li {
+    font-size: 1em;
+    color: #666;
+    margin: 5px 0;
+}
+
+.horario-list li strong {
+    color: #333;
 }
