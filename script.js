@@ -1,4 +1,4 @@
-//carrusel
+
 let currentIndex = 0;
 
 function showSlide(index) {
