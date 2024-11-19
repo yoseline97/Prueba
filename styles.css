@@ -475,53 +475,100 @@ footer {
     object-fit: cover;
 }
 
+
+#medicina-estetica {
+    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1731094670/Medicinaestetica2_pwqmaj.jpg'); /* Cambia el enlace */
+}
+
+/* Individual slide backgrounds */
+.slide-1 {
+    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775579/cosmetologia_nkn4zf.jpg');
+}
+
+.slide-2 {
+    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1729651446/nutricion_zsimtr.jpg');
+}
+
+.slide-3 {
+    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775573/terapia-fisica_poch8h.jpg');
+}
+
+.slide-4 {
+    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775554/psicologia_kkjq1g.jpg');
+}
+
+.slide-5 {
+    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1731094670/Medicinaestetica2_pwqmaj.jpg');
+}
+
+.slide-6 {
+    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1730775566/odontologia_erexzx.jpg');
+}
+
+/* Contenedor principal en dos columnas */
+.ubicacion-horario-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Estilos para alinear mapa y horario en dos columnas */
 .ubicacion-horario-section {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-    padding: 40px;
-    background-color: #f9f9f9;
-    max-width: 1000px;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+    max-width: 1200px;
     margin: auto;
 }
 
+/* Estilos para el contenedor del mapa */
 .mapa-container {
     flex: 1;
-    text-align: left;
+    max-width: 600px;
 }
 
-.mapa-container p {
-    font-size: 1em;
-    color: #333;
+.mapa-iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px;
+}
+
+.direccion {
     margin-top: 10px;
+    font-size: 14px;
+    color: #555;
 }
 
+/* Estilos para el contenedor del horario */
 .horario-container {
     flex: 1;
-    text-align: left;
+    max-width: 400px;
 }
 
 .horario-container h2 {
-    font-size: 1.5em;
-    color: #333;
+    font-size: 18px;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
 .horario-list {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-}
-
-.horario-list li {
-    font-size: 1em;
-    color: #666;
-    margin: 5px 0;
-}
-
-.horario-list li strong {
+    margin: 0;
+    font-size: 14px;
     color: #333;
 }
 
-#medicina-estetica {
-    background-image: url('https://res.cloudinary.com/ddstvpalr/image/upload/v1731094670/Medicinaestetica2_pwqmaj.jpg'); /* Cambia el enlace */
+.horario-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.horario-list strong {
+    font-weight: 600;
 }

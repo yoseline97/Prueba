@@ -5,6 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar Cita</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4a90e2;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            font-weight: bold;
+            color: #555;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        form input:focus {
+            border-color: #4a90e2;
+        }
+
+        .btn-hire {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #4a90e2;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-hire:hover {
+            background-color: #357ABD;
+        }
+
+        #statusMessage {
+            margin-top: 15px;
+            color: #4a90e2;
+            font-size: 0.9em;
+        }
+
+        #goToCartBtn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background-color: #27ae60;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: none; /* Initially hidden */
+        }
+
+        #goToCartBtn:hover {
+            background-color: #219653;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -27,7 +118,7 @@
         <p id="statusMessage"></p>
         
         <!-- Botón para ir al carrito, inicialmente oculto -->
-        <button id="goToCartBtn" onclick="window.location.href='carrito.html'" style="display: none;">Ir a Carrito</button>
+        <button id="goToCartBtn" onclick="window.location.href='carrito.html'">Ir a Carrito</button>
     </div>
 
     <!-- Firebase y scripts -->

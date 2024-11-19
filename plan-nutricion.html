@@ -3,32 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan Detallado - Nutrición</title>
-    <link rel="stylesheet" href="stylesPlanes.css">
+    <title>SABI - Paquetes de nutricional</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Establecer un tamaño fijo para las imágenes en las tarjetas */
+        .card-img-top {
+            width: 100%;
+            height: 250px; /* Establece una altura fija para las imágenes */
+            object-fit: cover; /* Asegura que las imágenes no se deformen, manteniendo su proporción */
+        }
+
+        /* Estilo para el menú desplegable */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Estilo para el logo en la barra de navegación */
+        .navbar-brand img {
+            max-height: 40px;
+        }
+
+        footer {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Plan Detallado de Nutrición</h1>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Espacio para el logo -->
+            <a class="navbar-brand" href="#">
+                <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731088716/logo2_q9emxe.jpg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"> <a class="nav-link" href="index.html">Inicio</a></li>
+                    <!-- Menú desplegable de Servicios -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="index.html#odontologia">Odontología</a></li>
+                            <li><a class="dropdown-item" href="index.html#cosmetologia">Cosmetología</a></li>
+                            <li><a class="dropdown-item" href="index.html#terapia-fisica">Terapia Física</a></li>
+                            <li><a class="dropdown-item" href="index.html#psicologia">Psicología</a></li>
+                            <li><a class="dropdown-item" href="index.html#medicina-estetica">Medicina Estetica</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="carrito.html">Citas</a></li>
+                    <li class="nav-item">  <a class="nav-link" href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Paquetes de Nutrición</h1>
+            <p class="lead">Tu camino hacia una vida saludable y equilibrada</p>
+        </div>
     </header>
-    
-    <section>
-        <p>Este es el plan detallado para los servicios de nutrición, con asesoramiento especializado para mejorar tu salud y bienestar.</p>
-        <ul>
-            <li><strong>Planes personalizados:</strong> $100 por plan. Incluye seguimiento mensual y ajustes según los objetivos del cliente.</li>
-            <li><strong>Consultas dietéticas:</strong> $60 por sesión. Evaluación de tus hábitos alimenticios y recomendaciones.</li>
-            <li><strong>Control de enfermedades crónicas:</strong> $150 por plan. Incluye alimentación adecuada para manejar enfermedades como diabetes o hipertensión.</li>
-            <li><strong>Asesoramiento en nutrición deportiva:</strong> $120 por sesión. Mejora tu rendimiento físico con un plan nutricional personalizado.</li>
-        </ul>
 
-        <!-- Botones Comprar y Agregar al carrito -->
-        <!-- Botón Contratar -->
-<a href="agendar-citas.html" class="btn-hire">Contratar</a>
+    <!-- Dental Packages Section -->
+    <div class="container my-5">
+        <div class="row text-center">
+            <!-- Paquete de Plan Integral de Bienestar (Nutrición + Actividad Física) -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731097330/nutricion1_mab8qz.jpg" class="card-img-top" alt="Nutrición + Actividad Física">
+                    <div class="card-body">
+                        <h5 class="card-title">Plan Integral de Bienestar (Nutrición + Actividad Física)</h5>
+                        <p class="card-text"> Este paquete incluye consultas de nutrición y asesoría en actividad física, ideal para quienes buscan un cambio integral de hábitos. Incluye un plan alimenticio personalizado y una guía.</p>
+                        <p class="card-text"><strong>Precio: $1000  MXN</strong> (consulta mensual)</p>
+                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Paquete de Nutrición para Condiciones Médicas Específicas -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731097330/nutricion2_xngzgu.jpg " class="card-img-top" alt="Médicas Específicas">
+                    <div class="card-body">
+                        <h5 class="card-title">Nutrición para Condiciones Médicas Específicas</h5>
+                        <p class="card-text">Para personas con condiciones médicas como diabetes, hipertensión o problemas digestivos. Incluye consulta inicial, plan nutricional especializado y seguimiento mensual.</p>
+                        <p class="card-text"><strong>Precio: $800  MXN</strong> (consulta mensual)</p>
+                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Paquete de Nutrición Familiar -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731097631/nutricion3_zjldjm.jpg " class="card-img-top" alt="Nutrición Familiar">
+                    <div class="card-body">
+                        <h5 class="card-title">Nutrición Familiar</h5>
+                        <p class="card-text">Incluye consultas para hasta cuatro miembros y un plan alimenticio familiar adaptable.</p>
+                        <p class="card-text"><strong>Precio: $1200 MXN</strong> (consulta mensual)</p>
+                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <a href="#" class="btn-cart">Agregar al carrito</a>
-    </section>
+        <div class="row text-center mt-4">
+            <!-- Paquete de para Pérdida de Peso -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731097631/nutricion4_n1eowu.jpg" class="card-img-top" alt="Pérdida de Peso">
+                    <div class="card-body">
+                        <h5 class="card-title">Plan para Pérdida de Peso</h5>
+                        <p class="card-text">Un programa de pérdida de peso que incluye una consulta inicial, evaluaciones semanales, y un plan alimenticio personalizado con estrategias de control de calorías y educación.</p>
+                        <p class="card-text"><strong>Precio: $700 MXN</strong> (consulta mensual)</p>
+                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Paquete de Nutrición Deportiva -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731097630/nutricion5_c00opm.jpg" class="card-img-top" alt="Nutrición Deportiva">
+                    <div class="card-body">
+                        <h5 class="card-title">Nutrición Deportiva</h5>
+                        <p class="card-text">Diseñado para deportistas y personas activas, este paquete incluye una consulta inicial, seguimiento mensual y un plan nutricional enfocado en el rendimiento y recuperación deportiva.</p>
+                        <p class="card-text"><strong>Precio: $500 MXN</strong> (consulta mensual)</p>
+                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Paquete de Plan Básico de Nutrición-->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731097630/nutricion6_kuf7qd.jpg" class="card-img-top" alt="Plan Básico de Nutrició">
+                    <div class="card-body">
+                        <h5 class="card-title"> Plan Básico de Nutrición</h5>
+                        <p class="card-text">mejorar sus hábitos alimenticios sin seguir una dieta estricta. Incluye una consulta inicial y una evaluación de hábitos, además de un plan alimenticio básico.</p>
+                        <p class="card-text"><strong>Precio: $300 MXN </strong> (consulta mensual)</p>
+                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <footer>
-        <a href="index.html" class="btn-plan">Volver a Inicio</a>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 SABI - Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
