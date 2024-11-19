@@ -61,33 +61,23 @@ function agregarAlCarrito(id) {
 
 function renderizarCarrito() {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    console.log('Contenido del carrito:', carrito); // Debugging
     const cartItems = document.getElementById("cart-items");
     const totalPriceEl = document.getElementById("total-price");
-
-    // Verificar que los elementos existen
-    if (!cartItems || !totalPriceEl) {
-        console.error('Elementos del DOM no encontrados.');
-        return;
-    }
-
     cartItems.innerHTML = "";
     let total = 0;
 
     carrito.forEach((item, index) => {
-        console.log(`Agregando al DOM: ${item.nombre}, Cantidad: ${item.cantidad}`);
         total += item.precio * item.cantidad;
         cartItems.innerHTML += `
             <tr>
                 <td>${item.nombre}</td>
                 <td>${item.cantidad}</td>
-                <td>$${(item.precio * item.cantidad).toFixed(2)}</td>
+                <td>$${item.precio * item.cantidad}</td>
                 <td><button class="btn btn-danger" onclick="eliminarDelCarrito(${index})">Eliminar</button></td>
             </tr>
         `;
     });
-
-    // Mostrar el total
-    console.log('Total calculado:', total);
     totalPriceEl.textContent = total.toFixed(2);
 }
 
