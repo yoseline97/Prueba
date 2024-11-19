@@ -5,45 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SABI - Paquetes de Psicología</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="script-carrito.js" defer></script>
     <style>
-        /* Establecer un tamaño fijo para las imágenes en las tarjetas */
         .card-img-top {
             width: 100%;
-            height: 250px; /* Establece una altura fija para las imágenes */
-            object-fit: cover; /* Asegura que las imágenes no se deformen, manteniendo su proporción */
+            height: 250px;
+            object-fit: cover;
         }
 
-        /* Estilo para el menú desplegable */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        /* Estilo para el logo en la barra de navegación */
         .navbar-brand img {
             max-height: 40px;
         }
@@ -57,7 +26,6 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <!-- Espacio para el logo -->
             <a class="navbar-brand" href="#">
                 <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731088716/logo2_q9emxe.jpg" alt="Logo">
             </a>
@@ -67,7 +35,6 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"> <a class="nav-link" href="index.html">Inicio</a></li>
-                    <!-- Menú desplegable de Servicios -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Servicios
@@ -77,14 +44,13 @@
                             <li><a class="dropdown-item" href="index.html#cosmetologia">Cosmetología</a></li>
                             <li><a class="dropdown-item" href="index.html#terapia-fisica">Terapia Física</a></li>
                             <li><a class="dropdown-item" href="index.html#nutricion">Nutrición</a></li>
-                            <li><a class="dropdown-item" href="index.html#medicina-estetica">Medicina estetica</a></li>
+                            <li><a class="dropdown-item" href="index.html#medicina-estetica">Medicina estética</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
-                    
                     <li class="nav-item"><a class="nav-link" href="carrito.html">Citas</a></li>
-                    <li class="nav-item">  <a class="nav-link" href="index.html#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -98,81 +64,81 @@
         </div>
     </header>
 
-    <!-- Psicología Packages Section -->
+    <!-- Paquetes de Psicología -->
     <div class="container my-5">
         <div class="row text-center">
-            <!-- Paquete de Infantil -->
+            <!-- Terapia Infantil y Adolescente -->
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card">
                     <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731093027/Psicologia2_dg5w6a.jpg" class="card-img-top" alt="Terapia Infantil">
                     <div class="card-body">
                         <h5 class="card-title">Terapia Infantil y Adolescente</h5>
-                        <p class="card-text">Involucra técnicas adaptadas a su edad e incluye sesiones con los padres.</p>
-                        <p class="card-text"><strong>Precio: $500 a $1,000 MXN</strong> (por sesión)</p>
-                        <a href="carrito.html" class="btn btn-success">Contratar</a>
+                        <p class="card-text">Incluye técnicas adaptadas a su edad e incluye sesiones con los padres.</p>
+                        <p><strong>Precio: $1,000 MXN</strong> (por sesión)</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(19)">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
-            <!-- Paquete de Individual -->
+            <!-- Terapia Individual -->
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card">
                     <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731094728/Psicologia6_knvwuf.jpg" class="card-img-top" alt="Terapia individual">
                     <div class="card-body">
                         <h5 class="card-title">Terapia Individual</h5>
                         <p class="card-text">Apoyo psicológico individual para trabajar en temas como ansiedad, depresión, etc.</p>
-                        <p class="card-text"><strong>Precio: $400 a $800 MXN</strong> (por sesión)</p>
-                        <a href="carrito.html" class="btn btn-success">Contratar</a>
+                        <p><strong>Precio: $800 MXN</strong> (por sesión)</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(20)">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
-            <!-- Paquete de Pareja -->
+            <!-- Terapia de Pareja -->
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card">
                     <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731094434/Psicologia5_fhwzeb.jpg" class="card-img-top" alt="Terapia pareja">
                     <div class="card-body">
                         <h5 class="card-title">Terapia de Pareja</h5>
                         <p class="card-text">Orientado a mejorar la relación, comunicación, y resolver conflictos.</p>
-                        <p class="card-text"><strong>Precio: $600 a $1,000 MXN</strong> (por sesión) </p>
-                        <a href="carrito.html" class="btn btn-success">Contratar</a>
+                        <p><strong>Precio: $1,000 MXN</strong> (por sesión)</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(21)">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
         </div>
-
+        <!-- Otros paquetes -->
         <div class="row text-center mt-4">
-            <!-- Paquete de manejo de estrés -->
+            <!-- Manejo del Estrés -->
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card">
                     <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731092211/Psicologia1_vy8mz1.jpg" class="card-img-top" alt="Manejo del Estrés">
                     <div class="card-body">
-                        <h5 class="card-title">Manejo del Estrés y la Ansiedad</h5>
-                        <p class="card-text">Se trabaja con técnicas específicas para reducir el estrés y controlar la ansiedad.</p>
-                        <p class="card-text"><strong>Precio: $500 a $800 MXN</strong> (por sesión)</p>
-                        <a href="carrito.html" class="btn btn-success">Contratar</a>
+                        <h5 class="card-title">Manejo del Estrés</h5>
+                        <p class="card-text">Se trabajan técnicas para reducir el estrés y controlar la ansiedad.</p>
+                        <p><strong>Precio: $800 MXN</strong> (por sesión)</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(22)">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
-            <!-- Paquete de Orientación Familiar -->
+            <!-- Orientación Familiar -->
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card">
                     <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731094339/Psicologia3_m1ggvu.jpg" class="card-img-top" alt="Orientación Familiar">
                     <div class="card-body">
                         <h5 class="card-title">Orientación Familiar</h5>
                         <p class="card-text">Para familias que desean mejorar la dinámica y resolver conflictos.</p>
-                        <p class="card-text"><strong>Precio: $700 a $1,200 MXN</strong> (por sesión)</p>
-                        <a href="carrito.html" class="btn btn-success">Contratar</a>
+                        <p><strong>Precio: $1,200 MXN</strong> (por sesión)</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(23)">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
-            <!-- Paquete de Desarrollo Personal -->
+            <!-- Desarrollo Personal -->
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card">
                     <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731094729/Psicologia7_za5ef1.jpg" class="card-img-top" alt="Desarrollo Personal">
                     <div class="card-body">
                         <h5 class="card-title">Desarrollo Personal</h5>
-                        <p class="card-text">Diseñado para quienes buscan mejorar en aspectos como habilidades sociales.</p>
-                        <p class="card-text"><strong>Precio: $400 a $700 MXN</strong> (por sesión)</p>
-                        <a href="carrito.html" class="btn btn-success">Contratar</a>
+                        <p class="card-text">Diseñado para quienes buscan mejorar habilidades sociales.</p>
+                        <p><strong>Precio: $700 MXN</strong> (por sesión)</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(24)">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -184,8 +150,6 @@
         <p>&copy; 2024 SABI - Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

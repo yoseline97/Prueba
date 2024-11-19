@@ -11,7 +11,36 @@ const paquetes = [
     { id: 9, nombre: "Ortodoncia", precio: 8000 },
     { id: 10, nombre: "Extracción de Muelas", precio: 1500 },
     { id: 11, nombre: "Resina Estética", precio: 700 },
-    { id: 12, nombre: "Implante Dental", precio: 15000 }
+    { id: 12, nombre: "Implante Dental", precio: 15000 },
+    // Paquetes de Terapia Física
+    { id: 13, nombre: "Evaluación Inicial", precio: 800 },
+    { id: 14, nombre: "Sesiones Individuales", precio: 4200 },
+    { id: 15, nombre: "Rehabilitación Postoperatoria", precio: 7500 },
+    { id: 16, nombre: "Terapia para Deportistas", precio: 6500 },
+    { id: 17, nombre: "Terapia de Grupo", precio: 3200 },
+    { id: 18, nombre: "Mantenimiento", precio: 2500 },
+    // Paquetes de Psicologia
+    { id: 19, nombre: "Terapia Infantil y Adolescente", precio: 1000 },
+    { id: 20, nombre: "Terapia Individual", precio: 800 },
+    { id: 21, nombre: "Terapia de Pareja", precio: 1000 },
+    { id: 22, nombre: "Manejo del Estrés", precio: 800 },
+    { id: 23, nombre: "Orientación Familiar", precio: 1200 },
+    { id: 24, nombre: "Desarrollo Personal", precio: 700 },
+    // Paquetes de Nutricion
+    { id: 25, nombre: "Plan Integral de Bienestar", precio: 1000 },
+    { id: 26, nombre: "Nutrición para Condiciones Médicas", precio: 800 },
+    { id: 27, nombre: "Nutrición Familiar", precio: 1200 },
+    { id: 28, nombre: "Plan para Pérdida de Peso", precio: 700 },
+    { id: 29, nombre: "Nutrición Deportiva", precio: 500 },
+    { id: 30, nombre: "Plan Básico de Nutrición", precio: 300 },
+    // Paquetes de Medicina estetica
+    { id: 31, nombre: "Botox", precio: 2000 },
+    { id: 32, nombre: "Rellenos Faciales", precio: 3500 },
+    { id: 33, nombre: "Rejuvenecimiento con Láser", precio: 4000 },
+    { id: 34, nombre: "Peeling Químico", precio: 1500 },
+    { id: 35, nombre: "Mesoterapia Facial", precio: 2200 },
+    { id: 36, nombre: "Hilos Tensores", precio: 6000 }
+
 ];
 
 function agregarAlCarrito(id) {

@@ -5,42 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SABI - Paquetes de Terapia Física</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="script-carrito.js"></script>
     <style>
         /* Establecer un tamaño fijo para las imágenes en las tarjetas */
         .card-img-top {
             width: 100%;
             height: 250px; /* Establece una altura fija para las imágenes */
             object-fit: cover; /* Asegura que las imágenes no se deformen, manteniendo su proporción */
-        }
-
-        /* Estilo para el menú desplegable */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #ddd;
         }
 
         /* Estilo para el logo en la barra de navegación */
@@ -57,7 +28,6 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <!-- Espacio para el logo -->
             <a class="navbar-brand" href="#">
                 <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731088716/logo2_q9emxe.jpg" alt="Logo">
             </a>
@@ -82,9 +52,8 @@
                     </li>
                     <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
-                    
                     <li class="nav-item"><a class="nav-link" href="carrito.html">Citas</a></li>
-                    <li class="nav-item">  <a class="nav-link" href="index.html#contacto">Contacto</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="index.html#contacto">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -98,7 +67,7 @@
         </div>
     </header>
 
-    <!-- Seccion de paquetes de Terapaia Fisica -->
+    <!-- Seccion de paquetes de Terapia Física -->
     <div class="container my-5">
         <div class="row text-center">
             <!-- Paquete de Evaluación Inicial -->
@@ -109,11 +78,11 @@
                         <h5 class="card-title">Evaluación Inicial</h5>
                         <p class="card-text">Incluye una evaluación completa por un fisioterapeuta, diagnóstico y recomendaciones personalizadas para el tratamiento.</p>
                         <p class="card-text"><strong>Precio: $800 MXN</strong></p>
-                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(13)">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
-            <!-- Paquete de Sesiones Inviduales -->
+            <!-- Paquete de Sesiones Individuales -->
             <div class="col-md-4">
                 <div class="card">
                     <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731094531/Terapia3_k2cg2o.jpg" class="card-img-top" alt="Sesiones Individuales">
@@ -121,7 +90,7 @@
                         <h5 class="card-title">Sesiones Individuales</h5>
                         <p class="card-text">Consiste en seis sesiones de terapia física individual, adaptadas a las necesidades del paciente.</p>
                         <p class="card-text"><strong>Precio: $4,200 MXN</strong></p>
-                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(14)">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -133,7 +102,7 @@
                         <h5 class="card-title">Rehabilitación Postoperatoria</h5>
                         <p class="card-text">Programa de 12 sesiones diseñado para pacientes que se recuperan de una cirugía, centrado en la movilidad y fortalecimiento.</p>
                         <p class="card-text"><strong>Precio: $7,500 MXN</strong></p>
-                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(15)">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -148,7 +117,7 @@
                         <h5 class="card-title">Terapia para Deportistas</h5>
                         <p class="card-text">Incluye un paquete de 10 sesiones, enfocado en la prevención y tratamiento de lesiones deportivas, así como en la mejora del rendimiento.</p>
                         <p class="card-text"><strong>Precio: $6,500 MXN</strong></p>
-                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(16)">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -159,8 +128,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Terapia de Grupo</h5>
                         <p class="card-text">Ocho sesiones grupales de terapia física, ideales para fomentar la motivación y el apoyo entre pacientes con problemas similares.</p>
-                        <p class="card-text"><strong>Precio: $3,200 MXN</strong> </p>
-                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                        <p class="card-text"><strong>Precio: $3,200 MXN</strong></p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(17)">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -172,7 +141,7 @@
                         <h5 class="card-title">Mantenimiento</h5>
                         <p class="card-text">Cuatro sesiones mensuales de seguimiento y mantenimiento para pacientes que han completado un tratamiento intensivo.</p>
                         <p class="card-text"><strong>Precio: $2,500 MXN</strong></p>
-                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(18)">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -185,7 +154,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
