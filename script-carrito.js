@@ -64,13 +64,12 @@ function renderizarCarrito() {
     const cartItems = document.getElementById("cart-items");
     const totalPriceEl = document.getElementById("total-price");
 
-    // Verificar que los elementos existen
     if (!cartItems || !totalPriceEl) {
-        console.error('Elementos del DOM no encontrados.');
+        console.error("Elementos del DOM no encontrados.");
         return;
     }
 
-    cartItems.innerHTML = "";
+    cartItems.innerHTML = ""; // Limpia antes de renderizar
     let total = 0;
 
     carrito.forEach((item, index) => {
@@ -86,10 +85,15 @@ function renderizarCarrito() {
         `;
     });
 
+    totalPriceEl.textContent = total.toFixed(2);
+
+    // Verificar el contenido del carrito en el DOM
+    console.log("Contenido de #cart-items después de renderizar:", cartItems.innerHTML);
+}
+
     // Mostrar el total
     console.log('Total calculado:', total);
     totalPriceEl.textContent = total.toFixed(2);
-}
 
 function eliminarDelCarrito(index) {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -104,8 +108,18 @@ function finalizarCompra() {
     renderizarCarrito(); // Actualiza la vista
 }
 
+const observer = new MutationObserver(() => {
+    console.log("Detectado cambio en el DOM. Re-renderizando carrito...");
+    renderizarCarrito();
+});
+
+// Observar cambios en el contenedor del carrito
+observer.observe(document.getElementById("cart-container"), { childList: true, subtree: true });
+
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Página completamente cargada, renderizando carrito...");
-    renderizarCarrito();
+    setTimeout(() => {
+        console.log("Forzando la renderización del carrito...");
+        renderizarCarrito();
+    }, 100); // Retrasa ligeramente para asegurarte de que otros scripts han terminado
 });
