@@ -69,17 +69,22 @@ function renderizarCarrito() {
         return;
     }
 
-    cartItems.innerHTML = ""; // Limpia antes de renderizar
+    // Elimina temporalmente el botón de PayPal
+    const paypalContainer = document.getElementById("paypal-button-container");
+    paypalContainer.innerHTML = "";
+
+    cartItems.innerHTML = "";
     let total = 0;
 
     carrito.forEach((item, index) => {
-        console.log(`Agregando al DOM: ${item.nombre}, Cantidad: ${item.cantidad}`);
-        total += item.precio * item.cantidad;
+        const subtotal = item.precio * item.cantidad;
+        total += subtotal;
+
         cartItems.innerHTML += `
             <tr>
                 <td>${item.nombre}</td>
                 <td>${item.cantidad}</td>
-                <td>$${(item.precio * item.cantidad).toFixed(2)}</td>
+                <td>$${subtotal.toFixed(2)}</td>
                 <td><button class="btn btn-danger" onclick="eliminarDelCarrito(${index})">Eliminar</button></td>
             </tr>
         `;
@@ -87,9 +92,10 @@ function renderizarCarrito() {
 
     totalPriceEl.textContent = total.toFixed(2);
 
-    // Verificar el contenido del carrito en el DOM
-    console.log("Contenido de #cart-items después de renderizar:", cartItems.innerHTML);
+    // Recargar el botón de PayPal después de renderizar
+    cargarBotonPayPal();
 }
+
 
     // Mostrar el total
     console.log('Total calculado:', total);
@@ -109,17 +115,42 @@ function finalizarCompra() {
 }
 
 const observer = new MutationObserver(() => {
-    console.log("Detectado cambio en el DOM. Re-renderizando carrito...");
-    renderizarCarrito();
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    if (carrito.length > 0 && document.getElementById("cart-items").innerHTML === "") {
+        console.warn("PayPal modificó el carrito. Restaurando...");
+        renderizarCarrito(); // Vuelve a renderizar el carrito
+    }
 });
 
-// Observar cambios en el contenedor del carrito
+// Observa cambios en el contenedor del carrito
 observer.observe(document.getElementById("cart-container"), { childList: true, subtree: true });
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-        console.log("Forzando la renderización del carrito...");
-        renderizarCarrito();
-    }, 100); // Retrasa ligeramente para asegurarte de que otros scripts han terminado
+    renderizarCarrito(); // Primero renderiza el carrito
+    cargarBotonPayPal(); // Luego carga el botón de PayPal
 });
+
+function cargarBotonPayPal() {
+    paypal.Buttons({
+        createOrder: (data, actions) => {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: document.getElementById("total-price").textContent // Total dinámico del carrito
+                    }
+                }]
+            });
+        },
+        onApprove: (data, actions) => {
+            return actions.order.capture().then((details) => {
+                alert("Pago exitoso. Gracias por tu compra.");
+                localStorage.removeItem("carrito"); // Limpia el carrito después de pagar
+                renderizarCarrito(); // Actualiza el carrito
+            });
+        },
+        onError: (err) => {
+            console.error("Error durante el pago:", err);
+        }
+    }).render('#paypal-button-container');
+}
