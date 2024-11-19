@@ -1,4 +1,4 @@
-// -------- CARRUSEL --------
+//carrusel
 let currentIndex = 0;
 
 function showSlide(index) {
@@ -115,7 +115,7 @@ document.addEventListener('click', function (e) {
 window.onload = updateCart;
 
 // Botón de pago de PayPal (simulación)
-document.getElementById('checkout-btn').addEventListener('click', function () {
+document.getElementById('paypal-button-container').addEventListener('click', function (e) {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     
     if (cartItems.length === 0) {
