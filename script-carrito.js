@@ -46,6 +46,10 @@ const paquetes = [
 function agregarAlCarrito(id) {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     const paquete = paquetes.find(p => p.id === id);
+    if (!paquete) {
+        alert("El paquete no existe.");
+        return;
+    }
     const item = carrito.find(p => p.id === id);
 
     if (item) {
@@ -55,6 +59,7 @@ function agregarAlCarrito(id) {
     }
     localStorage.setItem("carrito", JSON.stringify(carrito));
     alert(`${paquete.nombre} agregado al carrito.`);
+    renderizarCarrito(); // Llama a esta función para actualizar la vista
 }
 
 function renderizarCarrito() {
@@ -90,5 +95,12 @@ function finalizarCompra() {
     localStorage.removeItem("carrito");
     renderizarCarrito();
 }
+
+function vaciarCarrito() {
+    localStorage.removeItem("carrito");
+    renderizarCarrito();
+    alert("Carrito vaciado.");
+}
+
 
 document.addEventListener("DOMContentLoaded", renderizarCarrito);
