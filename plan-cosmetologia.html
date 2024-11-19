@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SABI - Paquetes de nutricional</title>
+    <title>SABI - Paquetes de Cosmetología</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="script-carrito.js"></script>
     <style>
         /* Establecer un tamaño fijo para las imágenes en las tarjetas */
         .card-img-top {
             width: 100%;
-            height: 250px; /* Establece una altura fija para las imágenes */
-            object-fit: cover; /* Asegura que las imágenes no se deformen, manteniendo su proporción */
+            height: 250px;
+            /* Establece una altura fija para las imágenes */
+            object-fit: cover;
+            /* Asegura que las imágenes no se deformen, manteniendo su proporción */
         }
 
         /* Estilo para el menú desplegable */
@@ -53,38 +57,40 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <!-- Espacio para el logo -->
             <a class="navbar-brand" href="#">
                 <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731088716/logo2_q9emxe.jpg" alt="Logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"> <a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="index2.html">Inicio</a></li>
                     <!-- Menú desplegable de Servicios -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Servicios
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="index.html#odontologia">Odontología</a></li>
-                            <li><a class="dropdown-item" href="index.html#terapia-fisica">Terapia Física</a></li>
+                            <li><a class="dropdown-item" href="index.html#terapia-fisica">Terapia Fisica</a></li>
                             <li><a class="dropdown-item" href="index.html#psicologia">Psicología</a></li>
                             <li><a class="dropdown-item" href="index.html#nutricion">Nutrición</a></li>
                             <li><a class="dropdown-item" href="index.html#medicina-estetica">Medicina Estética</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
-                    
-                    <li class="nav-item"><a class="nav-link" href="carrito.html">Citas</a></li>
-                    <li class="nav-item">  <a class="nav-link" href="index.html#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
+                    <li class="nav-item"><a class="nav-link" href="agendar-citas.html">Citas</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="index.html#contacto">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -98,81 +104,86 @@
         </div>
     </header>
 
-    <!-- Dental Packages Section -->
+    <!-- Paquetes de Cosmetología -->
     <div class="container my-5">
         <div class="row text-center">
-            <!-- Paquete de Rejuvenecimiento Facial -->
+            <!-- Paquete 1 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731125831/11_fdf845.jpg" class="card-img-top" alt="Nutrición + Actividad Física">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731125831/11_fdf845.jpg"
+                        class="card-img-top" alt="Rejuvenecimiento Facial">
                     <div class="card-body">
                         <h5 class="card-title">Rejuvenecimiento Facial</h5>
-                        <p class="card-text"> Para quienes buscan revitalizar y rejuvenecer el rostro, este paquete incluye una limpieza facial profunda, radiofrecuencia facial y un tratamiento de hidratación profunda para una piel luminosa y fresca.</p>
-                        <p class="card-text"><strong>Precio: $1,200 MXN</strong></p>
-                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                        <p class="card-text">Limpieza facial profunda, radiofrecuencia y tratamiento hidratante.</p>
+                        <p><strong>Precio: $1,200 MXN</strong></p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(1)">Contratar</button>
                     </div>
                 </div>
             </div>
-            <!-- Paquete de Anti-Manchas y Cicatrices -->
+            <!-- Paquete 2 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731125831/22_koa765.jpg" class="card-img-top" alt="Médicas Específicas">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731125831/22_koa765.jpg"
+                        class="card-img-top" alt="Anti-Manchas y Cicatrices">
                     <div class="card-body">
                         <h5 class="card-title">Anti-Manchas y Cicatrices</h5>
-                        <p class="card-text"> Ideal para reducir manchas y mejorar la apariencia de cicatrices, este paquete combina microneedling, eliminación de cicatrices y un peeling facial que ayudarán a mejorar la textura y el tono de la piel.</p>
-                        <p class="card-text"><strong>Precio: $1,800 MXN</strong></p>
-                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                        <p class="card-text">Microneedling, eliminación de cicatrices y peeling facial.</p>
+                        <p><strong>Precio: $1,800 MXN</strong></p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(2)">Contratar</button>
                     </div>
                 </div>
             </div>
-            <!-- Paquete de Reducción Corporal -->
+            <!-- Paquete 3 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731125832/33_n5ptqg.jpg" class="card-img-top" alt="Nutrición Familiar">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731125832/33_n5ptqg.jpg"
+                        class="card-img-top" alt="Reducción Corporal">
                     <div class="card-body">
                         <h5 class="card-title">Reducción Corporal</h5>
-                        <p class="card-text">Diseñado para moldear el cuerpo sin cirugía, incluye técnicas como la lipopada sin cirugía, cavitación y radiofrecuencia corporal. Estas tecnologías eliminan la grasa localizada y tonifican la piel.</p>
-                        <p class="card-text"><strong>Precio: $1,600 MXN</strong></p>
-                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                        <p class="card-text">Lipopada sin cirugía, cavitación y radiofrecuencia corporal.</p>
+                        <p><strong>Precio: $1,600 MXN</strong></p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(3)">Contratar</button>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="row text-center mt-4">
-            <!-- Paquete de Belleza Natural -->
+            <!-- Paquete 4 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731125832/44_fvzfga.jpg" class="card-img-top" alt="Pérdida de Peso">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731125832/44_fvzfga.jpg"
+                        class="card-img-top" alt="Belleza Natural">
                     <div class="card-body">
                         <h5 class="card-title">Belleza Natural</h5>
-                        <p class="card-text">Realza la belleza del rostro de forma natural con la bichectomía y blefaroplastía sin cirugía, acompañadas de un tratamiento de hidrafacial para una apariencia fresca y juvenil.</p>
-                        <p class="card-text"><strong>Precio: $1,850 MXN</strong></p>
-                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                        <p class="card-text">Bichectomía, blefaroplastía sin cirugía e hidrafacial.</p>
+                        <p><strong>Precio: $1,850 MXN</strong></p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(4)">Contratar</button>
                     </div>
                 </div>
             </div>
-            <!-- Paquete de Detox y Drenaje -->
+            <!-- Paquete 5 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731125832/55_ujuaoe.jpg" class="card-img-top" alt="Nutrición Deportiva">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731125832/55_ujuaoe.jpg"
+                        class="card-img-top" alt="Detox y Drenaje">
                     <div class="card-body">
                         <h5 class="card-title">Detox y Drenaje</h5>
-                        <p class="card-text">Para desintoxicar el cuerpo, este paquete combina drenaje linfático brasileño, maderoterapia, y mesoterapia básica, ayudando a mejorar la circulación y reducir la retención de líquidos.</p>
-                        <p class="card-text"><strong>Precio: $1,500 MXN</strong></p>
-                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                        <p class="card-text">Drenaje linfático, maderoterapia y mesoterapia básica.</p>
+                        <p><strong>Precio: $1,500 MXN</strong></p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(5)">Contratar</button>
                     </div>
                 </div>
             </div>
-            <!-- Paquete de Reducción de Grasa-->
+            <!-- Paquete 6 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731125831/66_aff70n.jpg" class="card-img-top" alt="Plan Básico de Nutrició">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731125831/66_aff70n.jpg"
+                        class="card-img-top" alt="Reducción de Grasa">
                     <div class="card-body">
                         <h5 class="card-title">Reducción de Grasa</h5>
-                        <p class="card-text">Incluye mesoterapia lipoenzimas, hidrolipoclasia, y el método brasileño para lograr una reducción de grasa localizada en áreas específicas. Ideal para quienes desean una silueta más esculpida.</p>
-                        <p class="card-text"><strong>Precio: $3,100 MXN</strong> </p>
-                        <a href="agendar-citas.html" class="btn btn-success">Contratar</a>
+                        <p class="card-text">Mesoterapia, hidrolipoclasia y método brasileño.</p>
+                        <p><strong>Precio: $3,100 MXN</strong></p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito(6)">Contratar</button>
                     </div>
                 </div>
             </div>
@@ -184,8 +195,7 @@
         <p>&copy; 2024 SABI - Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
