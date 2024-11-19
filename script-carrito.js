@@ -46,25 +46,36 @@ const paquetes = [
 function agregarAlCarrito(id) {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     const paquete = paquetes.find(p => p.id === id);
-    const item = carrito.find(p => p.id === id);
+    if (!paquete) return;
 
+    const item = carrito.find(p => p.id === id);
     if (item) {
         item.cantidad++;
     } else {
         carrito.push({ ...paquete, cantidad: 1 });
     }
+
     localStorage.setItem("carrito", JSON.stringify(carrito));
     alert(`${paquete.nombre} agregado al carrito.`);
-    renderizarCarrito(); // Actualiza el carrito en pantalla
+    renderizarCarrito();
 }
-
 
 function renderizarCarrito() {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     console.log('Contenido del carrito:', carrito); // Debugging
     const cartItems = document.getElementById("cart-items");
     const totalPriceEl = document.getElementById("total-price");
+<<<<<<< HEAD
+
+    if (!cartItems || !totalPriceEl) {
+        console.error("No se encontraron los elementos del carrito en el DOM.");
+        return;
+    }
+
+    cartItems.innerHTML = ""; // Limpia el contenido previo
+=======
     cartItems.innerHTML = "";
+>>>>>>> c187835a7f31440d06029b0793b3b8b4b408d8d5
     let total = 0;
 
     carrito.forEach((item, index) => {
@@ -78,6 +89,10 @@ function renderizarCarrito() {
             </tr>
         `;
     });
+<<<<<<< HEAD
+
+=======
+>>>>>>> c187835a7f31440d06029b0793b3b8b4b408d8d5
     totalPriceEl.textContent = total.toFixed(2);
 }
 
@@ -88,6 +103,32 @@ function eliminarDelCarrito(index) {
     renderizarCarrito();
 }
 
+<<<<<<< HEAD
+document.addEventListener("DOMContentLoaded", () => {
+    renderizarCarrito();
+});
+
+paypal.Buttons({
+    createOrder: (data, actions) => {
+        const total = document.getElementById("total-price").textContent;
+        return actions.order.create({
+            purchase_units: [{
+                amount: { value: total }
+            }]
+        });
+    },
+    onApprove: (data, actions) => {
+        return actions.order.capture().then(orderData => {
+            alert("Pago exitoso. Gracias por su compra.");
+            localStorage.removeItem("carrito");
+            renderizarCarrito();
+        });
+    },
+    onError: (err) => {
+        console.error("Error con PayPal:", err);
+    }
+}).render("#paypal-button-container");
+=======
 function finalizarCompra() {
     alert("Compra finalizada. ¡Gracias!");
     localStorage.removeItem("carrito");
@@ -96,3 +137,4 @@ function finalizarCompra() {
 
 
 document.addEventListener("DOMContentLoaded", renderizarCarrito);
+>>>>>>> c187835a7f31440d06029b0793b3b8b4b408d8d5
