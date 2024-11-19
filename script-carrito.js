@@ -105,4 +105,7 @@ function finalizarCompra() {
 }
 
 
-document.addEventListener("DOMContentLoaded", renderizarCarrito);
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Página completamente cargada, renderizando carrito...");
+    renderizarCarrito();
+});
