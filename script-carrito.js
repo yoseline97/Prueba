@@ -55,10 +55,13 @@ function agregarAlCarrito(id) {
     }
     localStorage.setItem("carrito", JSON.stringify(carrito));
     alert(`${paquete.nombre} agregado al carrito.`);
+    renderizarCarrito(); // Actualiza el carrito en pantalla
 }
+
 
 function renderizarCarrito() {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    console.log('Contenido del carrito:', carrito); // Debugging
     const cartItems = document.getElementById("cart-items");
     const totalPriceEl = document.getElementById("total-price");
     cartItems.innerHTML = "";
@@ -88,7 +91,8 @@ function eliminarDelCarrito(index) {
 function finalizarCompra() {
     alert("Compra finalizada. ¡Gracias!");
     localStorage.removeItem("carrito");
-    renderizarCarrito();
+    renderizarCarrito(); // Actualiza la vista
 }
+
 
 document.addEventListener("DOMContentLoaded", renderizarCarrito);
