@@ -62,10 +62,8 @@ function agregarAlCarrito(id) {
 
 function renderizarCarrito() {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    console.log('Contenido del carrito:', carrito); // Debugging
     const cartItems = document.getElementById("cart-items");
     const totalPriceEl = document.getElementById("total-price");
-<<<<<<< HEAD
 
     if (!cartItems || !totalPriceEl) {
         console.error("No se encontraron los elementos del carrito en el DOM.");
@@ -73,9 +71,6 @@ function renderizarCarrito() {
     }
 
     cartItems.innerHTML = ""; // Limpia el contenido previo
-=======
-    cartItems.innerHTML = "";
->>>>>>> c187835a7f31440d06029b0793b3b8b4b408d8d5
     let total = 0;
 
     carrito.forEach((item, index) => {
@@ -84,15 +79,12 @@ function renderizarCarrito() {
             <tr>
                 <td>${item.nombre}</td>
                 <td>${item.cantidad}</td>
-                <td>$${item.precio * item.cantidad}</td>
+                <td>$${(item.precio * item.cantidad).toFixed(2)}</td>
                 <td><button class="btn btn-danger" onclick="eliminarDelCarrito(${index})">Eliminar</button></td>
             </tr>
         `;
     });
-<<<<<<< HEAD
 
-=======
->>>>>>> c187835a7f31440d06029b0793b3b8b4b408d8d5
     totalPriceEl.textContent = total.toFixed(2);
 }
 
@@ -103,7 +95,6 @@ function eliminarDelCarrito(index) {
     renderizarCarrito();
 }
 
-<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", () => {
     renderizarCarrito();
 });
@@ -128,13 +119,3 @@ paypal.Buttons({
         console.error("Error con PayPal:", err);
     }
 }).render("#paypal-button-container");
-=======
-function finalizarCompra() {
-    alert("Compra finalizada. ¡Gracias!");
-    localStorage.removeItem("carrito");
-    renderizarCarrito(); // Actualiza la vista
-}
-
-
-document.addEventListener("DOMContentLoaded", renderizarCarrito);
->>>>>>> c187835a7f31440d06029b0793b3b8b4b408d8d5

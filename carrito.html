@@ -46,12 +46,12 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-     <!-- Navbar -->
-     <header>
+    <!-- Navbar -->
+    <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1729651396/logo_lh6bp8.jpg" alt="Logo SABI" class="d-inline-block align-text-top" style="height: 40px;">
+                    <img src="https://res.cloudinary.com/ddstvpalr/image/upload/v1731088716/logo2_q9emxe.jpg" alt="Logo" width="108px">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -90,15 +90,6 @@
         </div>
         <div id="paypal-button-container" class="mt-4"></div>
     </main>
-            <div id="paypal-button-container" class="mt-4"></div>
-
-            <div class="cart-summary mt-4">
-                <h3>Total: $<span id="total-price">0.00</span></h3>
-                <div id="paypal-button-container"></div>                
-            </div>
-
-        </div>
-    </main>
 
     <!-- Footer -->
     <footer class="text-center py-3 mt-auto bg-dark text-white">
@@ -106,119 +97,6 @@
     </footer>
 
     <!-- Scripts -->
-
     <script src="script-carrito.js" defer></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-    <!-- Bootstrap JS (opcional, para funcionalidades interactivas como el menú desplegable) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-    <script type="module" src="script-carrito.js"></script>
-
-
-    <!-- Estilos personalizados -->
-    <style>
-        /* Estilos adicionales */
-        body {
-            background-color: #f0f2f5;
-        }
-
-
-        /* Navbar en blanco con sombra */
-        .navbar {
-            background-color: #ffffff;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra en la barra de navegación */
-        }
-       
-        .navbar-brand img {
-            height: 40px;
-            margin-right: 10px;
-        }
-
-
-        .navbar .nav-link {
-            color: #333 !important;
-            font-weight: 500;
-            font-size: 16px;
-        }
-
-
-        .navbar .nav-link:hover {
-            color: #007bff !important;
-        }
-
-
-        /* Tabla del carrito */
-        #cart-table th {
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-        }
-
-
-        #cart-table tbody tr:hover {
-            background-color: #f8f9fa;
-        }
-
-
-        /* Resumen del carrito */
-        .cart-summary {
-            text-align: right;
-        }
-
-
-        .cart-summary h3 {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-
-        /* Footer */
-        footer {
-            background-color: #007bff;
-        }
-
-
-        footer p {
-            margin: 0;
-            color: #ffffff;
-        }
-    </style>
-
-<script>
-    paypal.Buttons({
-        // Sets up the transaction when a payment button is clicked
-        createOrder: (data, actions) => {
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: '77.44' // The price of the product
-                    }
-                }]
-            });
-        },
-        // Finalize the transaction after payer approval
-        onApprove: (data, actions) => {
-            return actions.order.capture().then(function(orderData) {
-                // Successful capture! For dev/demo purposes:
-                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                const transaction = orderData.purchase_units[0].payments.captures[0];
-                alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
-                
-                // Replace the following code with the redirection or confirmation page
-                const element = document.getElementById('paypal-button-container');
-                element.innerHTML = '<h3>Thank you for your payment!</h3>';
-                // Or go to another URL: actions.redirect('thank-you.html');
-            });
-        },
-        // Handle errors
-        onError: (err) => {
-            console.error('An error occurred during the transaction:', err);
-        }
-    }).render('#paypal-button-container');
-</script>
-
 </body>
 </html>
