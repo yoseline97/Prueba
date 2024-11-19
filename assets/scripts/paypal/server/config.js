@@ -1,4 +1,0 @@
-module.exports = {
-    PAYPAL_CLIENT_ID: 'AZ9a26BQjiLj69UkpOySrQBzCdlSu8uwN4xYwQUTE9vHr_0MlaBsChY_6q-lunjErVZCNflc8-D4DvR4',
-    PAYPAL_CLIENT_SECRET: 'EL4Pg7VzqKVcykBa_qiXy_ggTJ494U3j0NKUX91ycSJys0JBAbni3YoNujNhNARCb0mlMS7h6UjMgXzB',
-};
