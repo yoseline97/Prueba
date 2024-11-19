@@ -181,7 +181,6 @@
         }
     </style>
 
-
 <script>
     paypal.Buttons({
         // Sets up the transaction when a payment button is clicked
@@ -200,13 +199,7 @@
                 // Successful capture! For dev/demo purposes:
                 console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
                 const transaction = orderData.purchase_units[0].payments.captures[0];
-                alert(`${paquete.nombre} agregado al carrito. Cantidad: ${item ? item.cantidad : 1}`);
-
-                if (!paquete) {
-    alert("El paquete no existe.");
-    return;
-}
-
+                alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
                 
                 // Replace the following code with the redirection or confirmation page
                 const element = document.getElementById('paypal-button-container');
@@ -219,9 +212,7 @@
             console.error('An error occurred during the transaction:', err);
         }
     }).render('#paypal-button-container');
-
-    <button class="btn btn-warning" onclick="vaciarCarrito()">Vaciar Carrito</button>
-
 </script>
+
 </body>
 </html>
