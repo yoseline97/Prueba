@@ -148,6 +148,8 @@ paypal.Buttons({
             alert("Pago exitoso. Gracias por su compra.");
             localStorage.removeItem("carrito");
             renderizarCarrito();
+            window.location.href = "agendar-citas.html";  // Redirección a la página de agendar citas
+            
         });
     },
     onError: (err) => {
