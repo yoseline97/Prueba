@@ -250,7 +250,13 @@ button, a, input[type="button"], input[type="submit"] {
     </footer>
 
     <!-- Scripts -->
-    <script src="script-carrito.js" defer></script>
+ 
+    <script type="module" src="save.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=M2YUJLUAG2G2G"></script>  <!-- Asegúrate de colocar tu CLIENT_ID -->
+
+<!-- Contenedor donde se mostrará el botón de PayPal -->
+<div id="paypal-button-container"></div>
+
 
 <script>
 // Dark mode toggle script
@@ -281,6 +287,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
-
+<a href="historial-compras.html" class="btn btn-primary mt-3">Ver Historial de Compras</a>
 </body>
 </html>
