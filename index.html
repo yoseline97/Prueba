@@ -427,40 +427,24 @@ button, a, input[type="button"], input[type="submit"] {
             <p class="direccion">SABI, Av Tito Estrada Ote N10, Centro, 42730 Progreso, Hgo., México</p>
         </div>
     
-        <section class="horario-container">
+        <div class="horario-container">
             <h2>Horario de Apertura</h2>
-            <ul class="horario-list">
-                <li><strong>Lunes, Martes, Miércoles, Jueves, Viernes:</strong> 09:00 a.m. – 07:00 p.m.</li>
-                <li><strong>Sábado:</strong> 09:00 a.m. – 05:00 p.m.</li>
-                <li><strong>Domingo:</strong> Cerrado</li>
-            </ul>
-        </section>
-        
-        <style>
-            .horario-container {
-                padding: 20px;
-                background-color: #f9f9f9;
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                max-width: 400px;
-                margin: auto;
-            }
-            .horario-container h2 {
-                text-align: center;
-                color: #333;
-            }
-            .horario-list {
-                list-style-type: none;
-                padding: 0;
-            }
-            .horario-list li {
-                padding: 5px 0;
-                border-bottom: 1px solid #ddd;
-            }
-            .horario-list li:last-child {
-                border-bottom: none;
-            }
-        </style>
+            <dl class="horario-list">
+                <div class="horario-item">
+                    <dt><strong>Lunes, Martes, Miércoles, Jueves, Viernes:</strong></dt>
+                    <dd>09:00 a.m. – 07:00 p.m.</dd>
+                </div>
+                <div class="horario-item">
+                    <dt><strong>Sábado:</strong></dt>
+                    <dd>09:00 a.m. – 05:00 p.m.</dd>
+                </div>
+                <div class="horario-item">
+                    <dt><strong>Domingo:</strong></dt>
+                    <dd>Cerrado</dd>
+                </div>
+            </dl>
+        </div>
+    </section>
     
     
 
