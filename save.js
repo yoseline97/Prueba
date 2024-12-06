@@ -153,7 +153,6 @@ paypal.Buttons({
     onApprove: (data, actions) => {
         return actions.order.capture().then(orderData => {
             alert("Pago exitoso. Gracias por su compra.");
-            window.location.href = "agendar-citas.html";  // Redirección a la página de agendar citas
             
             // Después de aprobar el pago, guardamos el carrito en Firebase
             saveCartToFirebase(); // Guardar los productos en el carrito a Firebase
@@ -173,3 +172,5 @@ paypal.Buttons({
 document.addEventListener("DOMContentLoaded", () => {
     renderizarCarrito();
 });
+
+window.location.href = "agendar-citas.html";  // Redirección a la página de agendar citas
