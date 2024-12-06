@@ -427,19 +427,40 @@ button, a, input[type="button"], input[type="submit"] {
             <p class="direccion">SABI, Av Tito Estrada Ote N10, Centro, 42730 Progreso, Hgo., México</p>
         </div>
     
-        <div class="horario-container">
-            <h2>Horario de apertura</h2>
+        <section class="horario-container">
+            <h2>Horario de Apertura</h2>
             <ul class="horario-list">
-                <li><strong>Lunes:</strong> 09:00 a.m. – 07:00 p.m.</li>
-                <li><strong>Martes:</strong> 09:00 a.m. – 07:00 p.m.</li>
-                <li><strong>Miércoles:</strong> 09:00 a.m. – 07:00 p.m.</li>
-                <li><strong>Jueves:</strong> 09:00 a.m. – 07:00 p.m.</li>
-                <li><strong>Viernes:</strong> 09:00 a.m. – 07:00 p.m.</li>
+                <li><strong>Lunes, Martes, Miércoles, Jueves, Viernes:</strong> 09:00 a.m. – 07:00 p.m.</li>
                 <li><strong>Sábado:</strong> 09:00 a.m. – 05:00 p.m.</li>
                 <li><strong>Domingo:</strong> Cerrado</li>
             </ul>
-        </div>
-    </section>
+        </section>
+        
+        <style>
+            .horario-container {
+                padding: 20px;
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                max-width: 400px;
+                margin: auto;
+            }
+            .horario-container h2 {
+                text-align: center;
+                color: #333;
+            }
+            .horario-list {
+                list-style-type: none;
+                padding: 0;
+            }
+            .horario-list li {
+                padding: 5px 0;
+                border-bottom: 1px solid #ddd;
+            }
+            .horario-list li:last-child {
+                border-bottom: none;
+            }
+        </style>
     
     
 
