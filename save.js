@@ -104,6 +104,7 @@ function agregarAlCarrito(id) {
     renderizarCarrito();
 }
 
+
 // Función para renderizar el carrito en el HTML
 function renderizarCarrito() {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -154,6 +155,9 @@ paypal.Buttons({
         return actions.order.capture().then(orderData => {
             alert("Pago exitoso. Gracias por su compra.");
 
+            
+            generarFacturaPDF();
+
             // Guardar el carrito en Firebase
             saveCartToFirebase();
 
@@ -173,6 +177,10 @@ paypal.Buttons({
 // Función para generar la factura en PDF
 function generarFacturaPDF() {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    // Verificar el contenido del carrito
+    console.log(carrito);  // Agrega esto para ver qué contiene el carrito
+
     const total = document.getElementById("total-price").textContent;
     const fecha = new Date().toLocaleDateString();
 
@@ -197,6 +205,7 @@ function generarFacturaPDF() {
 
     // Recorrer los productos y agregar al PDF
     carrito.forEach(item => {
+        console.log(item);  // Verifica los detalles del producto
         doc.text(`${item.nombre} (x${item.cantidad})`, 10, y);
         doc.text(`$${(item.precio * item.cantidad).toFixed(2)}`, 150, y);
         y += 10; // Incrementa la posición para el siguiente producto
@@ -212,7 +221,6 @@ function generarFacturaPDF() {
     doc.save("factura_compra.pdf");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    renderizarCarrito();
-});
 
+const total = document.getElementById("total-price").textContent;
+console.log("Total:", total);
