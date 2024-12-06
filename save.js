@@ -161,7 +161,7 @@ paypal.Buttons({
             // Limpiar el carrito local
             localStorage.removeItem("carrito");
             renderizarCarrito(); // Actualizar la interfaz
-            window.location.href = "agendar-citas.html";  // Redirección a la página de agendar citas
+            
         });
     },
     onError: (err) => {
