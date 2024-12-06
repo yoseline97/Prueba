@@ -142,7 +142,7 @@ function resetTimer() {
         alert("Carrito vaciado por inactividad.");
         localStorage.removeItem("carrito");
         renderizarCarrito();
-    }, 30000); // 30 segundos de inactividad
+    }, 60000); // 30 segundos de inactividad
 }
 
 // Reiniciar el temporizador cada vez que haya actividad (movimiento del ratón o teclas presionadas)
