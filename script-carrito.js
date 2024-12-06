@@ -1,3 +1,11 @@
+const coupons = {
+    "DESCUENTO10": 10, // 10% de descuento
+    "DESCUENTO20": 20, // 20% de descuento
+    "DESCUENTO50": 50  // 50% de descuento
+};
+
+let discountPercentage = 0; // Descuento aplicado
+
 const paquetes = [
     { id: 1, nombre: "Rejuvenecimiento Facial", precio: 1200 },
     { id: 2, nombre: "Anti-Manchas y Cicatrices", precio: 1800 },
@@ -43,6 +51,7 @@ const paquetes = [
 
 ];
 
+// Función para agregar productos al carrito
 function agregarAlCarrito(id) {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     const paquete = paquetes.find(p => p.id === id);
@@ -60,6 +69,25 @@ function agregarAlCarrito(id) {
     renderizarCarrito();
 }
 
+// Función para aplicar el cupón
+function applyCoupon() {
+    const couponCode = document.getElementById("couponCode").value.toUpperCase();
+    const discountMessage = document.getElementById("discountMessage");
+
+    if (coupons[couponCode]) {
+        discountPercentage = coupons[couponCode];
+        discountMessage.textContent = `¡Cupón aplicado! Descuento del ${discountPercentage}%.`;
+        discountMessage.style.color = "green";
+    } else {
+        discountPercentage = 0;
+        discountMessage.textContent = "Cupón inválido. Intenta de nuevo.";
+        discountMessage.style.color = "red";
+    }
+
+    renderizarCarrito(); // Recalcula el total con el descuento
+}
+
+// Función para renderizar el carrito
 function renderizarCarrito() {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     const cartItems = document.getElementById("cart-items");
@@ -85,9 +113,14 @@ function renderizarCarrito() {
         `;
     });
 
+    // Aplicar el descuento al total
+    const discount = (total * discountPercentage) / 100;
+    total -= discount;
+
     totalPriceEl.textContent = total.toFixed(2);
 }
 
+// Función para eliminar productos del carrito
 function eliminarDelCarrito(index) {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     carrito.splice(index, 1);
@@ -95,9 +128,11 @@ function eliminarDelCarrito(index) {
     renderizarCarrito();
 }
 
+// Inicializar el carrito al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
     renderizarCarrito();
 });
+
 
 paypal.Buttons({
     createOrder: (data, actions) => {
