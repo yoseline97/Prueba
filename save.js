@@ -1,4 +1,3 @@
-
 // Inicializar Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-database.js";
@@ -74,7 +73,7 @@ function saveCartToFirebase() {
 
     // Generar un identificador único para cada compra
     const timestamp = Date.now(); // Timestamp como ID único
-    const cartRef = ref(database, `cart/${timestamp}`); // Guardar bajo la ruta cart/timestamp
+    const cartRef = ref(database, cart/${timestamp}); // Guardar bajo la ruta cart/timestamp
 
     // Guardar los datos del carrito en Firebase
     set(cartRef, carrito)
@@ -100,9 +99,10 @@ function agregarAlCarrito(id) {
     }
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    alert(`${paquete.nombre} agregado al carrito.`);
+    alert(${paquete.nombre} agregado al carrito.);
     renderizarCarrito();
 }
+
 
 // Función para renderizar el carrito en el HTML
 function renderizarCarrito() {
@@ -154,6 +154,9 @@ paypal.Buttons({
         return actions.order.capture().then(orderData => {
             alert("Pago exitoso. Gracias por su compra.");
 
+            
+            generarFacturaPDF();
+
             // Guardar el carrito en Firebase
             saveCartToFirebase();
 
@@ -173,6 +176,10 @@ paypal.Buttons({
 // Función para generar la factura en PDF
 function generarFacturaPDF() {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    // Verificar el contenido del carrito
+    console.log(carrito);  // Agrega esto para ver qué contiene el carrito
+
     const total = document.getElementById("total-price").textContent;
     const fecha = new Date().toLocaleDateString();
 
@@ -187,8 +194,8 @@ function generarFacturaPDF() {
     // Información de la factura (Fecha y total)
     doc.setFont("helvetica", "normal");
     doc.setFontSize(12);
-    doc.text(`Fecha: ${fecha}`, 10, 30);
-    doc.text(`Total: $${total}`, 10, 40);
+    doc.text(Fecha: ${fecha}, 10, 30);
+    doc.text(Total: $${total}, 10, 40);
 
     // Tabla de productos
     doc.text("Productos:", 10, 50);
@@ -197,8 +204,9 @@ function generarFacturaPDF() {
 
     // Recorrer los productos y agregar al PDF
     carrito.forEach(item => {
-        doc.text(`${item.nombre} (x${item.cantidad})`, 10, y);
-        doc.text(`$${(item.precio * item.cantidad).toFixed(2)}`, 150, y);
+        console.log(item);  // Verifica los detalles del producto
+        doc.text(${item.nombre} (x${item.cantidad}), 10, y);
+        doc.text($${(item.precio * item.cantidad).toFixed(2)}, 150, y);
         y += 10; // Incrementa la posición para el siguiente producto
     });
 
@@ -206,13 +214,12 @@ function generarFacturaPDF() {
     doc.line(10, y + 5, 200, y + 5);
 
     // Total final
-    doc.text(`Total: $${total}`, 150, y + 10);
+    doc.text(Total: $${total}, 150, y + 10);
 
     // Descargar el PDF
     doc.save("factura_compra.pdf");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    renderizarCarrito();
-});
 
+const total = document.getElementById("total-price").textContent;
+console.log("Total:", total);
