@@ -134,29 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-paypal.Buttons({
-    createOrder: (data, actions) => {
-        const total = document.getElementById("total-price").textContent;
-        return actions.order.create({
-            purchase_units: [{
-                amount: { value: total }
-            }]
-        });
-    },
-    onApprove: (data, actions) => {
-        return actions.order.capture().then(orderData => {
-            alert("Pago exitoso. Gracias por su compra.");
-            localStorage.removeItem("carrito");
-            renderizarCarrito();
-            window.location.href = "agendar-citas.html";  // Redirección a la página de agendar citas
-            
-        });
-    },
-    onError: (err) => {
-        console.error("Error con PayPal:", err);
-    }
-}).render("#paypal-button-container");
-
 // Temporizador de inactividad para vaciar el carrito
 let timer;
 function resetTimer() {
