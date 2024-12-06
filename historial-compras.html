@@ -26,6 +26,14 @@
                 <!-- Aquí se llenarán los datos dinámicamente -->
             </tbody>
         </table>
+
+        <!-- Paquetes más frecuentes -->
+        <h3>Paquetes más Comprados</h3>
+        <div id="paquetes-frecuentes"></div>
+
+        <!-- Recomendaciones Personalizadas -->
+        <h3>Recomendaciones Personalizadas</h3>
+        <div id="recomendaciones-personalizadas"></div>
     </div>
 
     <script type="module">
@@ -51,6 +59,8 @@
         async function obtenerHistorialCompras() {
             const historialRef = ref(db, 'cart'); // Ruta donde están almacenadas las compras en Firebase
             const historialTabla = document.getElementById("historial-items"); // Referencia a la tabla en el DOM
+            const paquetesFrecuentes = document.getElementById("paquetes-frecuentes"); // Contenedor para paquetes frecuentes
+            const recomendacionesPersonalizadas = document.getElementById("recomendaciones-personalizadas"); // Contenedor de recomendaciones
 
             try {
                 const snapshot = await get(historialRef); // Obtener los datos de Firebase
@@ -59,6 +69,7 @@
                 if (snapshot.exists()) {
                     const compras = snapshot.val(); // Datos de las compras
                     historialTabla.innerHTML = ""; // Limpiar la tabla antes de llenarla
+                    let contadorProductos = {}; // Contador para productos más vendidos
 
                     // Recorrer las compras y agregarlas a la tabla
                     Object.entries(compras).forEach(([idCompra, productos]) => {
@@ -68,6 +79,13 @@
                         productos.forEach((producto) => {
                             productosHTML += `${producto.nombre} (x${producto.cantidad})<br>`;
                             total += producto.precio * producto.cantidad;
+
+                            // Contar la cantidad de veces que aparece cada producto
+                            if (contadorProductos[producto.nombre]) {
+                                contadorProductos[producto.nombre] += producto.cantidad;
+                            } else {
+                                contadorProductos[producto.nombre] = producto.cantidad;
+                            }
                         });
 
                         // Agregar una fila a la tabla
@@ -81,12 +99,47 @@
                         `;
                         historialTabla.innerHTML += row;
                     });
+
+                    // Crear paquetes de productos más frecuentes
+                    const productosOrdenados = Object.entries(contadorProductos)
+                        .sort((a, b) => b[1] - a[1]) // Ordenar por cantidad descendente
+                        .slice(0, 3); // Top 3 productos más frecuentes
+
+                    // Mostrar los paquetes
+                    paquetesFrecuentes.innerHTML = ""; // Limpiar el contenedor de paquetes
+                    productosOrdenados.forEach(([producto, cantidad]) => {
+                        paquetesFrecuentes.innerHTML += `
+                            <div class="alert alert-info">
+                                <strong>${producto}</strong> - Comprado ${cantidad} veces
+                            </div>
+                        `;
+                    });
+
+                    // Crear recomendaciones personalizadas
+                    recomendacionesPersonalizadas.innerHTML = ""; // Limpiar el contenedor de recomendaciones
+                    productosOrdenados.forEach(([producto, cantidad]) => {
+                        recomendacionesPersonalizadas.innerHTML += `
+                            <div class="alert alert-success">
+                                <strong>Recomendación</strong>: Si te gustó <strong>${producto}</strong>, también podrías estar interesado en:
+                                <ul>
+                                    <li>Producto relacionado 1</li>
+                                    <li>Producto relacionado 2</li>
+                                    <li>Producto relacionado 3</li>
+                                </ul>
+                            </div>
+                        `;
+                    });
+
                 } else {
                     historialTabla.innerHTML = "<tr><td colspan='4'>No hay compras registradas.</td></tr>";
+                    paquetesFrecuentes.innerHTML = "<p>No hay paquetes frecuentes.</p>";
+                    recomendacionesPersonalizadas.innerHTML = "<p>No hay recomendaciones disponibles.</p>";
                 }
             } catch (error) {
                 console.error("Error al obtener el historial de compras:", error);
                 historialTabla.innerHTML = "<tr><td colspan='4'>Error al cargar los datos. Intenta nuevamente.</td></tr>";
+                paquetesFrecuentes.innerHTML = "<p>Error al cargar los paquetes frecuentes.</p>";
+                recomendacionesPersonalizadas.innerHTML = "<p>Error al cargar las recomendaciones.</p>";
             }
         }
 
