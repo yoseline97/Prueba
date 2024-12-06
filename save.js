@@ -173,4 +173,3 @@ document.addEventListener("DOMContentLoaded", () => {
     renderizarCarrito();
 });
 
-window.location.href = "agendar-citas.html";  // Redirección a la página de agendar citas
